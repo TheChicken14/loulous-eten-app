@@ -23,8 +23,10 @@ struct WelcomeSheet: View {
                 HStack {
                     Text("welcome.whatsYourName")
                         .bold()
-                    TextField("general.name", text: $viewModel.name)
-                        .multilineTextAlignment(.trailing)
+                    TextField(
+                        LocalizedStringKey("general.name"),
+                        text: $viewModel.name
+                    ).multilineTextAlignment(.trailing)
                 }.frame(width: 280, height: 50)
                 
                 Spacer()
