@@ -1,0 +1,74 @@
+/* 
+  Localizable.strings
+  Loulou's eten
+
+  Created by Wisse Hes on 17/08/2021.
+  
+*/
+
+// MARK: General terms
+"general.feedingHistory" = "Voedingsgeschiedenis";
+
+"general.time" = "Tijd";
+
+"general.name" = "Naam";
+
+"general.ok" = "Oké";
+
+"general.done" = "Klaar";
+
+"general.close" = "Sluiten";
+
+// MARK: Welcome screen
+
+"welcome.header" = "Welkom bij Loulou's app!";
+"welcome.subheader" = "Om te kunnen onthouden wie Loulou eten heeft gegeven hebben we je naam nodig.";
+
+"welcome.whatsYourName" = "Wat is je naam?";
+
+// MARK: Homescreen
+
+"home.name" = "Home";
+
+"home.hasGotBreakfast" = "Heeft Loulou al ontbijt gehad vandaag?";
+"home.hasGotDinner" = "Heeft Loulou al avondeten gehad vandaag?";
+
+"home.food.no" = "Nee!";
+"home.food.yes" = "Ja!";
+
+"home.fedByOnTime %@ %@" = "Om %1$@ uur door %2$@";
+
+"home.fedButton" = "Ik heb Loulou eten gegeven";
+"home.undo" = "Ongedaan maken";
+"home.areYouSure" = "Weet je het zeker?";
+
+"home.reload" = "Herladen";
+
+// MARK: Alerts
+
+"alert.alreadyFed.title" = "Loulou heeft al eten!";
+
+"alert.noConnection.title" = "Geen verbinding!";
+"alert.noConnection.message" = "Er ging iets mis tijdens het verbinden met de server, probeer het straks opnieuw";
+
+// MARK: Settings
+
+"settings" = "Instellingen";
+
+// MARK: Feeding sheet
+
+"feeding.name" = "Eten geven";
+
+"feeding.time" = "Tijd";
+
+"feeding.type" = "Soort eten";
+"feeding.type.morning" = "Ontbijt";
+"feeding.type.evening" = "Avondeten";
+
+"feeding.by" = "Door";
+
+// MARK: Feeding history sheet
+
+"feedingHistory.dateAt %@ %@" = "%1$@ om %2$@ uur";
+
+"feedingHistory.by %@" = "Door %@";
