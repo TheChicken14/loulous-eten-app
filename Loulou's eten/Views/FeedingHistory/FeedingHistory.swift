@@ -18,6 +18,13 @@ struct FeedingHistory: View {
                 if !viewModel.loading {
                     List(viewModel.history, id: \._id) { item in
                         FeedingHistoryItemView(historyItem: item)
+                            .contextMenu {
+                                Button {
+                                    viewModel.removeItem(item: item)
+                                } label: {
+                                    Label("feedingHistory.remove", systemImage: "trash")
+                                }
+                            }
                     }
                 } else {
                     Spacer()
@@ -28,6 +35,11 @@ struct FeedingHistory: View {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("general.close") {
                         presentationMode.wrappedValue.dismiss()
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    if viewModel.secondLoading {
+                        ProgressView()
                     }
                 }
             }

@@ -72,3 +72,5 @@
 "feedingHistory.dateAt %@ %@" = "%1$@ om %2$@ uur";
 
 "feedingHistory.by %@" = "Door %@";
+
+"feedingHistory.remove" = "Verwijderen";
