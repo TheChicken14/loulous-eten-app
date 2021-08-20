@@ -9,9 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationView {
-            Home()
-        }
+//        NavigationView {
+            TabView {
+                Home()
+                    .tabItem {
+                        Label("home.name", systemImage: "house")
+                    }
+                
+                FeedingHistory()
+                    .tabItem {
+                        Label("general.feedingHistory", systemImage: "clock")
+                    }
+            }
+//        }
     }
 }
 
