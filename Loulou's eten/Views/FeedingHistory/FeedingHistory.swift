@@ -14,29 +14,26 @@ struct FeedingHistory: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                if !viewModel.loading {
-                    List(viewModel.history, id: \._id) { item in
-                        FeedingHistoryItemView(historyItem: item)
-                            .contextMenu {
-                                Button {
-                                    viewModel.removeItem(item: item)
-                                } label: {
-                                    Label("feedingHistory.remove", systemImage: "trash")
-                                }
+            List {
+                if viewModel.loading {
+                    HStack {
+                        Spacer()
+                        ProgressView()
+                        Spacer()
+                    }
+                }
+                
+                ForEach(viewModel.history, id: \._id) { item in
+                    FeedingHistoryItemView(historyItem: item)
+                        .contextMenu {
+                            Button {
+                                viewModel.removeItem(item: item)
+                            } label: {
+                                Label("feedingHistory.remove", systemImage: "trash")
                             }
-                    }
-                } else {
-                    Spacer()
-                    ProgressView()
-                    Spacer()
+                        }
                 }
-            }.navigationTitle("general.feedingHistory").onAppear(perform: viewModel.load).toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("general.close") {
-                        presentationMode.wrappedValue.dismiss()
-                    }
-                }
+            }.navigationTitle("general.history").onAppear(perform: viewModel.load).toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     if viewModel.secondLoading {
                         ProgressView()
