@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		89264BEF26CD549500DC1EA3 /* ButtonState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89264BEE26CD549500DC1EA3 /* ButtonState.swift */; };
+		894B970726D044CE00DD0CC9 /* Loulou2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 894B970426D044CE00DD0CC9 /* Loulou2@3x.png */; };
+		894B970826D044CF00DD0CC9 /* Loulou2@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 894B970526D044CE00DD0CC9 /* Loulou2@1x.png */; };
+		894B970926D044CF00DD0CC9 /* Loulou2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 894B970626D044CE00DD0CC9 /* Loulou2@2x.png */; };
 		89608E0E26CBB927004993F7 /* FeedingSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89608E0D26CBB927004993F7 /* FeedingSheet.swift */; };
 		89608E1026CBBC2D004993F7 /* FeedingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89608E0F26CBBC2D004993F7 /* FeedingViewModel.swift */; };
 		89AEF1A826CC597100983E68 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 89AEF1AA26CC597100983E68 /* Localizable.strings */; };
@@ -54,6 +57,9 @@
 /* Begin PBXFileReference section */
 		8905EB1226CE7B30004365A2 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		89264BEE26CD549500DC1EA3 /* ButtonState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonState.swift; sourceTree = "<group>"; };
+		894B970426D044CE00DD0CC9 /* Loulou2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Loulou2@3x.png"; sourceTree = "<group>"; };
+		894B970526D044CE00DD0CC9 /* Loulou2@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Loulou2@1x.png"; sourceTree = "<group>"; };
+		894B970626D044CE00DD0CC9 /* Loulou2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Loulou2@2x.png"; sourceTree = "<group>"; };
 		89608E0D26CBB927004993F7 /* FeedingSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedingSheet.swift; sourceTree = "<group>"; };
 		89608E0F26CBBC2D004993F7 /* FeedingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedingViewModel.swift; sourceTree = "<group>"; };
 		89AEF1A926CC597100983E68 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -144,6 +150,16 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		894B970326D0449F00DD0CC9 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				894B970526D044CE00DD0CC9 /* Loulou2@1x.png */,
+				894B970626D044CE00DD0CC9 /* Loulou2@2x.png */,
+				894B970426D044CE00DD0CC9 /* Loulou2@3x.png */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
 		89D3A07F26C864950001837A = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +180,7 @@
 		89D3A08A26C864960001837A /* Loulou's eten */ = {
 			isa = PBXGroup;
 			children = (
+				894B970326D0449F00DD0CC9 /* Icons */,
 				89B4D1FD26CB1DAD00B43A71 /* Loulous-eten-Info.plist */,
 				89FD01C926C86C8200D2C6D2 /* Models */,
 				89D3A09A26C864BC0001837A /* ViewModels */,
@@ -287,8 +304,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				894B970926D044CF00DD0CC9 /* Loulou2@2x.png in Resources */,
 				89D3A09326C864980001837A /* Preview Assets.xcassets in Resources */,
 				89AEF1A826CC597100983E68 /* Localizable.strings in Resources */,
+				894B970726D044CE00DD0CC9 /* Loulou2@3x.png in Resources */,
+				894B970826D044CF00DD0CC9 /* Loulou2@1x.png in Resources */,
 				89AEF1AE26CC622500983E68 /* Launch Screen.storyboard in Resources */,
 				89D3A09026C864980001837A /* Assets.xcassets in Resources */,
 			);
