@@ -34,6 +34,13 @@ struct FeedingHistory: View {
                         }
                 }
             }.navigationTitle("general.history").onAppear(perform: viewModel.load).toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        viewModel.load()
+                    } label: {
+                        Label("home.reload", systemImage: "arrow.clockwise")
+                    }
+                }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     if viewModel.secondLoading {
                         ProgressView()
