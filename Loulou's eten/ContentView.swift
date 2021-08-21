@@ -20,7 +20,7 @@ struct ContentView: View {
                     .tabItem {
                         Label("general.feedingHistory", systemImage: "clock")
                     }
-            }
+            }.navigationViewStyle(.stack)
 //        }
     }
 }
