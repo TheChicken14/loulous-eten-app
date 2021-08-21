@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Home: View {
     
+    @Environment(\.colorScheme) var colorScheme
     @StateObject var viewModel = HomeViewModel()
     
     var body: some View {
@@ -98,7 +99,11 @@ struct Home: View {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         NavigationLink(destination: SettingsView()) {
                             Label("settings", systemImage: "gear")
-                                .foregroundColor(.black)
+                                .foregroundColor(
+                                    colorScheme == ColorScheme.dark
+                                    ? .white
+                                    : .black
+                                )
                         }
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
@@ -106,7 +111,11 @@ struct Home: View {
                             viewModel.load()
                         } label: {
                             Label("home.reload", systemImage: "arrow.clockwise")
-                                .foregroundColor(.black)
+                                .foregroundColor(
+                                    colorScheme == ColorScheme.dark
+                                    ? .white
+                                    : .black
+                                )
                         }
                     }
                 }.onOpenURL { url in
