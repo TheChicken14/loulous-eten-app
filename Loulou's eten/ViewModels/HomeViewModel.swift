@@ -13,9 +13,25 @@ class HomeViewModel: ObservableObject {
     @Published var loading: Bool = true
     @Published var giveFoodLoading: Bool = false
     
-    @Published var hasFood: Bool = false
-    @Published var whenGotFood: Date? = Date()
-    @Published var feeder: String? = ""
+    @Published var userInfo: UserInfo?
+    
+    @Published var pets: [Pet] = []
+    @Published var selectedPetIndex: Int = 0 {
+        didSet {
+            self.selectedPet = self.pets[selectedPetIndex]
+        }
+    }
+    @Published var selectedPet: Pet? {
+        didSet {
+            getPetStatus()
+        }
+    }
+    
+    @Published var hasBreakfast: Bool = false
+    @Published var breakfastItem: FoodItem?
+    
+    @Published var hasDinner: Bool = false
+    @Published var dinnerItem: FoodItem?
     
     @Published var sheetShown: Bool = false
     @Published var whichSheet: HomeSheet = .historySheet
@@ -23,37 +39,64 @@ class HomeViewModel: ObservableObject {
     @Published var alertShown: Bool = false
     @Published var whichAlert: HomeAlert = .connectionError
     
-    @Published var breakfastOrDinner: String
-    
     init() {
-        let hour = Calendar.current.component(.hour, from: Date())
-        breakfastOrDinner = hour < 12 ? "home.hasGotBreakfast" : "home.hasGotDinner"
+//        let hour = Calendar.current.component(.hour, from: Date())
+//        breakfastOrDinner = hour < 12 ? "home.hasGotBreakfast" : "home.hasGotDinner"
     }
     
-    func checkName() -> String? {
-        if let name = UserDefaults.standard.string(forKey: "name") {
-            return name
+    func checkToken() -> String? {
+        if let token = UserDefaults.standard.string(forKey: "token") {
+            return token
         } else {
-            showSheet(sheet: .welcomeSheet)
             return nil
         }
     }
     
     func load() {
-        let _ = checkName()
-    
-        API.request("\(Config.API_URL)/loulou/hasFood").validate().responseDecodable(of: HasFoodResponse.self) { response in
-            self.loading = false
-            self.giveFoodLoading = false
-            
+        if checkToken() == nil {
+            return
+        }
+        
+        API.request("\(Config.API_URL)/user/info").validate().responseDecodable(of: UserInfo.self) { response in
             switch response.result {
-            case .success(let res):
-                self.hasFood = res.food
-                self.whenGotFood = res.whenDate
-                self.feeder = res.by
+            case .success(let userInfo):
+                self.userInfo = userInfo
+                self.pets = userInfo.pets
+                print(self.pets)
+                if self.selectedPet == nil {
+                    self.selectedPet = self.pets.first
+                }
+                
+                if userInfo.pets.count == 1 {
+                    self.showSheet(sheet: .welcomeSheet)
+                } else {
+                    self.getPetStatus()
+                }
+                                
+            case .failure(let error):
+                print(error)
+                self.showAlert(alert: .connectionError)
+            }
+        }
+    }
+    
+    func getPetStatus() {
+        guard let petID = selectedPet?.id else {
+            return;
+        }
+        
+        API.request("\(Config.API_URL)/pet/status/\(petID)").validate().responseDecodable(of: PetStatus.self) {response in
+            switch response.result {
+            case .success(let petStatus):
+                self.hasBreakfast = petStatus.morning != nil
+                self.breakfastItem = petStatus.morning
+                
+                self.hasDinner = petStatus.evening != nil
+                self.dinnerItem = petStatus.evening
+                
+                self.loading = false
                 
             case .failure(let error):
-                print("error")
                 print(error)
                 self.showAlert(alert: .connectionError)
             }
@@ -70,16 +113,12 @@ class HomeViewModel: ObservableObject {
     }
     
     func giveFood() {
-        if checkName() == nil {
-            return;
-        }
-        
         showSheet(sheet: .feedingSheet)
     }
     
     func undoFood() {
-        if checkName() == nil {
-            return;
+        if checkToken() == nil {
+            return
         }
         
         API.request("\(Config.API_URL)/loulou/undoFeeding", method: .delete).validate().response { response in
