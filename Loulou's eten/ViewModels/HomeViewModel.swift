@@ -57,6 +57,8 @@ class HomeViewModel: ObservableObject {
             return
         }
         
+        loading = true
+        
         API.request("\(Config.API_URL)/user/info").validate().responseDecodable(of: UserInfo.self) { response in
             switch response.result {
             case .success(let userInfo):
