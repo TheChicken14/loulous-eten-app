@@ -25,13 +25,13 @@ struct GradientBackground: View {
 
 struct LightModeBG: View {
     var body: some View {
-        LinearGradient(colors: [.blue, .white], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea()
+        LinearGradient(colors: [.yellow, .white], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea()
     }
 }
 
 struct DarkModeBG: View {
     var body: some View {
-        LinearGradient(colors: [.blue, .black], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea()
+        LinearGradient(colors: [.yellow, .black], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea()
     }
 }
 
