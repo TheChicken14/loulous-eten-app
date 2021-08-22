@@ -20,6 +20,13 @@ struct SettingsView: View {
                 TextField("general.name", text: $viewModel.name)
                     .multilineTextAlignment(.trailing)
             }
+            
+            NavigationLink {
+              ManagePets()
+            } label: {
+                Label("settings.pets", systemImage: "house.circle.fill")
+                    .font(Font.body.bold())
+            }
         }.navigationTitle("settings")
     }
 }
