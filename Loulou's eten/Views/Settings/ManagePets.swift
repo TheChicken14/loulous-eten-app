@@ -16,9 +16,7 @@ struct ManagePets: View {
             ForEach(viewModel.pets, id: \.id) { pet in
                 Text(pet.name)
                     .bold()
-            }.onDelete { index in
-                viewModel.delete(index: index)
-            }
+            }.onDelete(perform: viewModel.delete)
             
         }.navigationTitle("settings.pets")
             .alert(isPresented: $viewModel.alertShown) {
