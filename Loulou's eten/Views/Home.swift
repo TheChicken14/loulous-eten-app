@@ -19,33 +19,25 @@ struct Home: View {
                 
                 if !viewModel.loading {
                     VStack {
-                        Text(LocalizedStringKey( viewModel.breakfastOrDinner))
-                            .font(.headline)
-                        
-                        Label(viewModel.hasFood ? "home.food.yes" : "home.food.no", systemImage: viewModel.hasFood ? "checkmark.circle.fill" : "xmark.circle.fill")
-                            .font(.system(size: 40, weight: .bold, design: .rounded))
-                            .padding(40)
-                        
-                        if viewModel.hasFood {
-                            if let date = viewModel.whenGotFood, let name = viewModel.feeder {
-                                Text("home.fedByOnTime \(date, style: .time) \(name)")
-                                    .font(.title)
-                                    .padding()
-                            }
-                            
-                            Menu {
-                                Button() {
-                                    viewModel.undoFood()
-                                } label: {
-                                    Label("home.areYouSure", systemImage: "questionmark")
-                                        .foregroundColor(.red)
-                                }
-                            } label: {
-                                Text("home.undo")
+                        if let pet = viewModel.selectedPet {
+                            AdaptiveStack {
+                                HasFoodView(
+                                    type: .morning,
+                                    hasFood: viewModel.hasBreakfast,
+                                    feedingItem: viewModel.breakfastItem,
+                                    pet: pet
+                                )
+                                Divider()
+                                HasFoodView(
+                                    type: .evening,
+                                    hasFood: viewModel.hasDinner,
+                                    feedingItem: viewModel.dinnerItem,
+                                    pet: pet
+                                )
                             }
                         }
                         
-                        if !viewModel.hasFood {
+                        if !viewModel.hasBreakfast || !viewModel.hasDinner {
                             Button {
                                 viewModel.giveFood()
                             } label: {
@@ -61,7 +53,6 @@ struct Home: View {
                                 }
                             }
                         }
-                        Spacer()
                     }
                 }
                 
@@ -70,12 +61,12 @@ struct Home: View {
                 }
                 
             }.onAppear(perform: viewModel.load).navigationTitle("home.name")
-                .sheet(isPresented: $viewModel.sheetShown, onDismiss: viewModel.onSheetDismiss){
+                .fullScreenCover(isPresented: $viewModel.sheetShown, onDismiss: viewModel.onSheetDismiss){
                     switch viewModel.whichSheet {
                     case .historySheet:
                         FeedingHistory()
                     case .welcomeSheet:
-                        WelcomeSheet()
+                        WelcomeSheet(sheetShown: $viewModel.sheetShown)
                     case .feedingSheet:
                         FeedingSheet()
                     }
@@ -106,6 +97,16 @@ struct Home: View {
                                 )
                         }
                     }
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        if !viewModel.loading {
+                            Picker("home.pet", selection: $viewModel.selectedPetIndex) {
+                                ForEach(0..<viewModel.pets.count, id: \.self) { i in
+                                    Text(viewModel.pets[i].name)
+                                        .tag(i)
+                                }
+                            }.pickerStyle(MenuPickerStyle())
+                        }
+                    }
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
                             viewModel.load()
@@ -118,7 +119,8 @@ struct Home: View {
                                 )
                         }
                     }
-                }.onOpenURL { url in
+                }
+                .onOpenURL { url in
                     viewModel.onOpenURL(url: url)
                 }
         }
