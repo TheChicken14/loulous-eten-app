@@ -15,6 +15,7 @@
 "general.name" = "Naam";
 
 "general.ok" = "Oké";
+"general.cancel" = "Annuleren";
 
 "general.done" = "Klaar";
 
@@ -22,17 +23,29 @@
 
 // MARK: Welcome screen
 
+"welcome.title" = "Welkom";
 "welcome.header" = "Welkom bij Loulou's app!";
-"welcome.subheader" = "Om te kunnen onthouden wie Loulou eten heeft gegeven hebben we je naam nodig.";
+"welcome.subheader" = "Met Loulou's app kun je gemakkelijk het eten van je huisdier(en) bijhouden. Je kunt nu een huisdier toevoegen.";
 
-"welcome.whatsYourName" = "Wat is je naam?";
+"welcome.addFirstPet" = "Eerste huisdier toevoegen";
+
+"welcome.next" = "Volgende";
+
+"welcome.done" = "Klaar!";
+
+// MARK: Login screen
+
+"login.name" = "Log in";
+"login.withGoogle" = "Log in met Google";
 
 // MARK: Homescreen
 
 "home.name" = "Home";
 
-"home.hasGotBreakfast" = "Heeft Loulou al ontbijt gehad vandaag?";
-"home.hasGotDinner" = "Heeft Loulou al avondeten gehad vandaag?";
+"home.pet" = "Huisdier";
+
+"home.hasGotBreakfast %@" = "Heeft %@ al ontbijt gehad vandaag?";
+"home.hasGotDinner %@" = "Heeft %@ al avondeten gehad vandaag?";
 
 "home.food.no" = "Nee!";
 "home.food.yes" = "Ja!";
@@ -52,9 +65,20 @@
 "alert.noConnection.title" = "Geen verbinding!";
 "alert.noConnection.message" = "Er ging iets mis tijdens het verbinden met de server, probeer het straks opnieuw";
 
+"alert.somethingWrong.title" = "Er ging iets mis!";
+"alert.somethingWrong.message" = "Probeer het later opnieuw.";
+
+"alert.areYouSure.title" = "Weet je het zeker?";
+"alert.areYouSure.message" = "Weet je zeker dat je dit huisdier wilt verwijderen? Je kunt dit niet ongedaan maken!";
+"alert.areYouSure.yes" = "Ja";
+
 // MARK: Settings
 
 "settings" = "Instellingen";
+
+// MARK: - Manage pets
+
+"settings.pets" = "Huisdieren";
 
 // MARK: Feeding sheet
 
