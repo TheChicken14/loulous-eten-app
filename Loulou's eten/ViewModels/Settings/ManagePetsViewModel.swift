@@ -13,7 +13,7 @@ class ManagePetsViewModel: ObservableObject {
     @Published var alertShown: Bool = false
     @Published var whichAlert: ManagePetAlert = .connectionError
     
-    private var deletingIndex: Int = 0
+    private var deletingIndexes: [Int] = []
     
     init() {
         load()
@@ -31,14 +31,17 @@ class ManagePetsViewModel: ObservableObject {
         }
     }
     
-    func delete(index: IndexSet) {
-        deletingIndex = index.first ?? 0
+    func delete(at offsets: IndexSet) {
+        deletingIndexes = offsets.map { $0 }
+        
         showAlert(alert: .areYouSure)
-        print(index)
+        print(offsets)
     }
     
     func imSure() {
-        
+        for index in deletingIndexes {
+            print(index)
+        }
     }
     
     func showAlert(alert: ManagePetAlert) {
