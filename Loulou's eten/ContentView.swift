@@ -9,19 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-//        NavigationView {
-            TabView {
-                Home()
-                    .tabItem {
-                        Label("home.name", systemImage: "house")
-                    }
-                
-                FeedingHistory()
-                    .tabItem {
-                        Label("general.feedingHistory", systemImage: "clock")
-                    }
-            }.navigationViewStyle(.stack)
-//        }
+        MainView()
     }
 }
 
