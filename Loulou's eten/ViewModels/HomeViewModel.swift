@@ -36,6 +36,8 @@ class HomeViewModel: ObservableObject {
     @Published var sheetShown: Bool = false
     @Published var whichSheet: HomeSheet = .historySheet
     
+    @Published var welcomeShown: Bool = false
+    
     @Published var alertShown: Bool = false
     @Published var whichAlert: HomeAlert = .connectionError
     
@@ -106,8 +108,12 @@ class HomeViewModel: ObservableObject {
     }
     
     func showSheet(sheet: HomeSheet) {
-        self.whichSheet = sheet
-        self.sheetShown = true
+        if sheet == .welcomeSheet {
+            self.welcomeShown = true
+        } else {
+            self.whichSheet = sheet
+            self.sheetShown = true
+        }
     }
     func showAlert(alert: HomeAlert) {
         self.whichAlert = alert
