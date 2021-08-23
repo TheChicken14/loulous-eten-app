@@ -21,19 +21,23 @@ struct Home: View {
                     VStack {
                         if let pet = viewModel.selectedPet {
                             AdaptiveStack {
+                                Spacer()
                                 HasFoodView(
                                     type: .morning,
                                     hasFood: viewModel.hasBreakfast,
                                     feedingItem: viewModel.breakfastItem,
                                     pet: pet
                                 )
+                                Spacer()
                                 Divider()
+                                Spacer()
                                 HasFoodView(
                                     type: .evening,
                                     hasFood: viewModel.hasDinner,
                                     feedingItem: viewModel.dinnerItem,
                                     pet: pet
                                 )
+                                Spacer()
                             }
                         }
                         
