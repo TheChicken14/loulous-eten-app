@@ -8,7 +8,7 @@
 import Foundation
 
 struct RequestParameters: Codable {
-    let name: String
+    let id: Int
     let date: Date
     let type: FeedingType.RawValue
 }
