@@ -11,11 +11,12 @@ import Combine
 import UIKit
 
 class FeedingViewModel: ObservableObject {
+    
     @Published var buttonState: ButtonState = .normal
     
     @Published var date = Date()
     @Published var feedingType: FeedingType = .morning
-    @Published var byName = ""
+//    @Published var byName = ""
     
     var viewDismissalModePublisher = PassthroughSubject<Bool, Never>()
     private var shouldDismissView = false {
@@ -25,8 +26,8 @@ class FeedingViewModel: ObservableObject {
     }
     
     init() {
-        self.byName = UserDefaults.standard.string(forKey: "name") ?? ""
-        
+//        self.byName = UserDefaults.standard.string(forKey: "name") ?? ""
+
         let hour = Calendar.current.component(.hour, from: Date())
         self.feedingType = hour > 12 ? .evening : .morning
     }
@@ -36,13 +37,14 @@ class FeedingViewModel: ObservableObject {
         generator.notificationOccurred(.success)
     }
     
-    func feed() {
+    func feed(pet: Pet) {
         buttonState = .loading
-        let params = RequestParameters(name: byName, date: date, type: feedingType.rawValue)
+//        let params = RequestParameters(name: byName, date: date, type: feedingType.rawValue)
+        let params = RequestParameters(id: pet.id, date: date, type: feedingType.rawValue)
         let encoder = URLEncodedFormParameterEncoder(encoder: URLEncodedFormEncoder(dateEncoding: .iso8601))
         
         API.request(
-            "\(Config.API_URL)/loulou/giveFood",
+            "\(Config.API_URL)/pet/feed",
             method: .post,
             parameters: params,
             encoder: encoder

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FeedingSheet: View {
     
+    var pet: Pet
     @StateObject var viewModel = FeedingViewModel()
     @Environment(\.presentationMode) var presentationMode
     
@@ -32,20 +33,20 @@ struct FeedingSheet: View {
                         }.pickerStyle(MenuPickerStyle())
                     }
                     
-                    HStack {
-                        Label("feeding.by", systemImage: "person.fill")
-                            .font(Font.body.bold())
-                        Spacer()
-                        TextField("general.name", text: $viewModel.byName)
-                            .multilineTextAlignment(.trailing)
-                    }
+//                    HStack {
+//                        Label("feeding.by", systemImage: "person.fill")
+//                            .font(Font.body.bold())
+//                        Spacer()
+//                        TextField("general.name", text: $viewModel.byName)
+//                            .multilineTextAlignment(.trailing)
+//                    }
                 }
                 
                 Button {
-                    viewModel.feed()
+                    viewModel.feed(pet: pet)
                 } label: {
                     ButtonLabel(title: "general.done", imageName: "checkmark.circle", color: .green, state: viewModel.buttonState)
-
+                    
                 }.buttonStyle(PlainButtonStyle())
                 
             }.navigationTitle("feeding.name")
@@ -70,6 +71,6 @@ struct FeedingSheet: View {
 
 struct FeedingSheet_Previews: PreviewProvider {
     static var previews: some View {
-        FeedingSheet()
+        FeedingSheet(pet: Pet(name: "loulou", id: 1))
     }
 }
