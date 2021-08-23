@@ -10,33 +10,73 @@ import Alamofire
 
 class FeedingHistoryViewModel: ObservableObject {
     @Published var loading: Bool = true
-    @Published var secondLoading: Bool = false
-    @Published var history: [HistoryItem] = []
+    @Published var error: Bool = false
     
-    func load() {
-        API.request("\(Config.API_URL)/loulou/history").validate().responseDecodable(of: HistoryResponse.self) { response in
-            self.loading = false
-
-            switch response.result {
-            case .success(let res):
-                self.history = res.history.reversed()
-            case .failure(let error):
-                print("error")
-                print(error)
+    @Published var pets: [Pet] = []
+    @Published var selectedPetIndex: Int = 0 {
+        didSet {
+            self.selectedPet = self.pets[selectedPetIndex]
+        }
+    }
+    @Published var selectedPet: Pet? {
+        didSet {
+            if let pet = selectedPet {
+                self.loadFoodHistory(pet: pet)
             }
         }
     }
     
+    @Published var feedingHistory: [PetFeedingItem] = []
+    
+    func load() {
+        loadPets()
+    }
+    
+    func loadPets() {
+        API.request("\(Config.API_URL)/user/info").responseDecodable(of: UserInfo.self) { response in
+            switch response.result {
+            case .success(let userinfo):
+                self.pets = userinfo.pets
+                self.error = false
+                
+                if self.selectedPet == nil {
+                    if let firstPet = self.pets.first {
+                        self.selectedPet = firstPet
+                    }
+                } else if let selectedPet = self.selectedPet {
+                    self.loadFoodHistory(pet: selectedPet)
+                }
+            case .failure(_):
+                self.error = true
+            }
+        }
+    }
+    
+    func loadFoodHistory(pet: Pet) {
+        API.request(
+            "\(Config.API_URL)/food/history/\(selectedPet?.id ?? 0)"
+        )
+            .responseDecodable(of: [PetFeedingItem].self) { response in
+                switch response.result {
+                case .success(let feedingHistory):
+                    self.feedingHistory = feedingHistory
+                    self.loading = false
+                    self.error = false
+                    
+                case .failure(_):
+                    self.error = true
+                }
+            }
+    }
+    
     func removeItem(item: HistoryItem) {
-        secondLoading = true
-        
         let params = RemoveItemParams(_id: item._id)
+        
         API.request(
             "\(Config.API_URL)/loulou/removeItem",
             method: .delete,
             parameters: params
         ).validate().response { response in
-            self.secondLoading = false
             switch response.result {
             case .success(_):
                 self.load()

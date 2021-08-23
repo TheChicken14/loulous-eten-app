@@ -23,30 +23,33 @@ struct FeedingHistory: View {
                     }
                 }
                 
-                ForEach(viewModel.history, id: \._id) { item in
-                    FeedingHistoryItemView(historyItem: item)
-                        .contextMenu {
-                            Button {
-                                viewModel.removeItem(item: item)
-                            } label: {
-                                Label("feedingHistory.remove", systemImage: "trash")
+                ForEach(viewModel.feedingHistory, id: \.id) { item in
+                    FeedingHistoryItemView(feedingItem: item)
+                }
+            }.navigationTitle("general.history")
+                .onAppear(perform: viewModel.load)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Menu {
+                            Picker("home.pet", selection: $viewModel.selectedPetIndex) {
+                                ForEach(0..<viewModel.pets.count, id: \.self) { index in
+                                    Text(viewModel.pets[index].name)
+                                        .tag(index)
+                                }
                             }
+                        } label: {
+                            Text(viewModel.selectedPet?.name ?? "home.pet")
+                                .animation(.none)
                         }
-                }
-            }.navigationTitle("general.history").onAppear(perform: viewModel.load).toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        viewModel.load()
-                    } label: {
-                        Label("home.reload", systemImage: "arrow.clockwise")
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            viewModel.load()
+                        } label: {
+                            Label("home.reload", systemImage: "arrow.clockwise")
+                        }
                     }
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    if viewModel.secondLoading {
-                        ProgressView()
-                    }
-                }
-            }
         }
     }
 }

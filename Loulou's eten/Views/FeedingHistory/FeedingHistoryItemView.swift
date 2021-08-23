@@ -8,21 +8,21 @@
 import SwiftUI
 
 struct FeedingHistoryItemView: View {
-    let historyItem: HistoryItem
+    let feedingItem: PetFeedingItem
     
     var body: some View {
         VStack(alignment:.leading) {
-            if let date = historyItem.whenDate {
+            if let date = feedingItem.whenDate {
                 Text("feedingHistory.dateAt \(date, style: .date) \(date, style: .time)")
                     .font(.headline)
                     .padding(.bottom, 5)
                 
                 HStack {
-                    Text("feedingHistory.by \(historyItem.by)")
+                    Text("feedingHistory.by \(feedingItem.by.name)")
                     
                     Spacer()
                     
-                    switch historyItem.type {
+                    switch feedingItem.type {
                     case .morning:
                         Text("feeding.type.morning")
                     case .evening:
