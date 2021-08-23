@@ -103,12 +103,22 @@ struct Home: View {
                     }
                     ToolbarItem(placement: .navigationBarLeading) {
                         if !viewModel.loading {
-                            Picker("home.pet", selection: $viewModel.selectedPetIndex) {
-                                ForEach(0..<viewModel.pets.count, id: \.self) { i in
-                                    Text(viewModel.pets[i].name)
-                                        .tag(i)
+                            Menu {
+                                Picker("home.pet", selection: $viewModel.selectedPetIndex) {
+                                    ForEach(0..<viewModel.pets.count, id: \.self) { i in
+                                        Text(viewModel.pets[i].name)
+                                            .tag(i)
+                                    }
                                 }
-                            }.pickerStyle(MenuPickerStyle())
+                            } label: {
+                                Text(viewModel.selectedPet?.name ?? "home.pet")
+                                    .animation(.none)
+                                    .foregroundColor(
+                                        colorScheme == ColorScheme.dark
+                                        ? .white
+                                        : .black
+                                    )
+                            }
                         }
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
