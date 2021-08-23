@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
+import Combine
 
 struct MainView: View {
     @StateObject var viewModel = MainViewModel()
     
     var body: some View {
         TabView {
-            Home()
+            Home(reloadPublisher: viewModel.reloadPublisher)
                 .tabItem {
                     Label("home.name", systemImage: "house")
                 }

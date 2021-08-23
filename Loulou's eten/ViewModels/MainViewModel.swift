@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import Combine
 
 class MainViewModel: ObservableObject {
     @Published var isLoggedIn: Bool = false
@@ -16,6 +17,8 @@ class MainViewModel: ObservableObject {
     
     @Published var errorAlert: Bool = false
     
+    var reloadPublisher = PassthroughSubject<Bool, Never>()
+
     init() {
         let token = UserDefaults.standard.string(forKey: "token")
         if token != nil {
@@ -38,8 +41,10 @@ class MainViewModel: ObservableObject {
                 case true:
                     self.isLoading = false
                     self.showLoginView = false
+                    self.isLoggedIn = true
                     UserDefaults.standard.set(token, forKey: "token")
-                    
+                    self.reloadPublisher.send(true)
+
                 case false:
                     self.errorAlert = true
                 }
@@ -53,7 +58,6 @@ class MainViewModel: ObservableObject {
         ]
         
         AF.request("\(Config.API_URL)/auth/test", headers: headers).validate().response { response in
-            print(response.result)
             switch response.result {
             case .success(_):
                 completed(true)

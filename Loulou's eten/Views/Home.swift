@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import Combine
 
 struct Home: View {
     
     @Environment(\.colorScheme) var colorScheme
     @StateObject var viewModel = HomeViewModel()
+    
+    var reloadPublisher: PassthroughSubject<Bool, Never>
     
     var body: some View {
         NavigationView {
@@ -65,16 +68,17 @@ struct Home: View {
                 }
                 
             }.onAppear(perform: viewModel.load).navigationTitle("home.name")
-                .fullScreenCover(isPresented: $viewModel.sheetShown, onDismiss: viewModel.onSheetDismiss){
+                .sheet(isPresented: $viewModel.sheetShown, onDismiss: viewModel.onSheetDismiss){
                     switch viewModel.whichSheet {
                     case .historySheet:
                         FeedingHistory()
                     case .welcomeSheet:
-                        WelcomeSheet(sheetShown: $viewModel.sheetShown)
+                        EmptyView()
                     case .feedingSheet:
                         FeedingSheet()
                     }
                 }
+                .fullScreenCover(isPresented: $viewModel.welcomeShown, content: { WelcomeSheet(sheetShown: $viewModel.sheetShown) })
                 .alert(isPresented: $viewModel.alertShown) {
                     switch viewModel.whichAlert {
                     case .alreadyFed:
@@ -137,6 +141,9 @@ struct Home: View {
                 .onOpenURL { url in
                     viewModel.onOpenURL(url: url)
                 }
+                .onReceive(reloadPublisher) { output in
+                    viewModel.load()
+                }
         }
     }
 }
@@ -159,7 +166,7 @@ struct LoadingView: View {
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            Home()
+            Home(reloadPublisher: PassthroughSubject<Bool, Never>())
         }
     }
 }
