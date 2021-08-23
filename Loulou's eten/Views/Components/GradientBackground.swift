@@ -10,28 +10,33 @@ import SwiftUI
 struct GradientBackground: View {
     
     @Environment(\.colorScheme) var colorScheme
+    let color: Color = Color.purple
     
     var body: some View {
         switch colorScheme {
         case .light:
-            LightModeBG()
+            LightModeBG(themeColor: color)
         case .dark:
-            DarkModeBG()
+            DarkModeBG(themeColor: color)
         default:
-            LightModeBG()
+            LightModeBG(themeColor: color)
         }
     }
 }
 
 struct LightModeBG: View {
+    let themeColor: Color
+    
     var body: some View {
-        LinearGradient(colors: [.yellow, .white], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea()
+        LinearGradient(colors: [themeColor, .white], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea()
     }
 }
 
 struct DarkModeBG: View {
+    let themeColor: Color
+
     var body: some View {
-        LinearGradient(colors: [.yellow, .black], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea()
+        LinearGradient(colors: [themeColor, .black], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea()
     }
 }
 
