@@ -67,7 +67,7 @@ struct Home: View {
                     LoadingView()
                 }
                 
-            }.onAppear(perform: viewModel.load).navigationTitle("home.name")
+            }.onAppear(perform: { viewModel.load(showLoading: false) }).navigationTitle("home.name")
                 .sheet(isPresented: $viewModel.sheetShown, onDismiss: viewModel.onSheetDismiss){
                     switch viewModel.whichSheet {
                     case .historySheet:
@@ -75,7 +75,9 @@ struct Home: View {
                     case .welcomeSheet:
                         EmptyView()
                     case .feedingSheet:
-                        FeedingSheet()
+                        if let pet = viewModel.selectedPet {
+                            FeedingSheet(pet: pet)
+                        }
                     }
                 }
                 .fullScreenCover(isPresented: $viewModel.welcomeShown, content: { WelcomeSheet(sheetShown: $viewModel.sheetShown) })
@@ -114,6 +116,11 @@ struct Home: View {
                                             .tag(i)
                                     }
                                 }
+                                Menu("test") {
+                                    Button("test") {
+                                        print("pressed")
+                                    }
+                                }
                             } label: {
                                 Text(viewModel.selectedPet?.name ?? "home.pet")
                                     .animation(.none)
@@ -127,7 +134,7 @@ struct Home: View {
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
-                            viewModel.load()
+                            viewModel.load(showLoading: true)
                         } label: {
                             Label("home.reload", systemImage: "arrow.clockwise")
                                 .foregroundColor(

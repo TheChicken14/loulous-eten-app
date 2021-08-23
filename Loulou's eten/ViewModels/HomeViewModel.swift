@@ -54,12 +54,13 @@ class HomeViewModel: ObservableObject {
         }
     }
     
-    func load() {
+    func load(showLoading: Bool = false) {
         if checkToken() == nil {
             return
         }
-        
-        loading = true
+        if showLoading {
+            loading = true
+        }
         
         API.request("\(Config.API_URL)/user/info").validate().responseDecodable(of: UserInfo.self) { response in
             switch response.result {
