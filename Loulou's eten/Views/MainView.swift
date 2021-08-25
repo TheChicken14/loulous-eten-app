@@ -23,19 +23,9 @@ struct MainView: View {
                     Label("general.feedingHistory", systemImage: "clock")
                 }
         }.navigationViewStyle(.stack)
-            .onOpenURL(perform: { url in
-                viewModel.onOpenURL(url: url)
-            })
             .fullScreenCover(isPresented: $viewModel.showLoginView, content: {
-                LoginScreen(loading: viewModel.isLoading)
+                LoginScreen(isLoggedIn: $viewModel.isLoggedIn)
             })
-            .alert(isPresented: $viewModel.errorAlert) {
-                Alert(
-                    title: Text("alert.somethingWrong.title"),
-                    message: Text("alert.somethingWrong.message"),
-                    dismissButton: .cancel(Text("general.ok"))
-                )
-            }
     }
 }
 
