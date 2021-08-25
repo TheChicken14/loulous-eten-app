@@ -36,15 +36,16 @@ class HomeViewModel: ObservableObject {
     @Published var sheetShown: Bool = false
     @Published var whichSheet: HomeSheet = .historySheet
     
-    @Published var welcomeShown: Bool = false
+    @Published var welcomeShown: Bool = false {
+        didSet {
+            if !welcomeShown {
+                load(showLoading: true)
+            }
+        }
+    }
     
     @Published var alertShown: Bool = false
     @Published var whichAlert: HomeAlert = .connectionError
-    
-    init() {
-//        let hour = Calendar.current.component(.hour, from: Date())
-//        breakfastOrDinner = hour < 12 ? "home.hasGotBreakfast" : "home.hasGotDinner"
-    }
     
     func checkToken() -> String? {
         if let token = UserDefaults.standard.string(forKey: "token") {
@@ -72,7 +73,7 @@ class HomeViewModel: ObservableObject {
                     self.selectedPet = self.pets.first
                 }
                 
-                if userInfo.pets.count == 1 {
+                if userInfo.pets.count == 0 {
                     self.showSheet(sheet: .welcomeSheet)
                 } else {
                     self.getPetStatus()
