@@ -80,7 +80,7 @@ struct Home: View {
                         }
                     }
                 }
-                .fullScreenCover(isPresented: $viewModel.welcomeShown, content: { WelcomeSheet(sheetShown: $viewModel.sheetShown) })
+                .fullScreenCover(isPresented: $viewModel.welcomeShown, content: { WelcomeSheet(sheetShown: $viewModel.welcomeShown) })
                 .alert(isPresented: $viewModel.alertShown) {
                     switch viewModel.whichAlert {
                     case .alreadyFed:
@@ -114,11 +114,6 @@ struct Home: View {
                                     ForEach(0..<viewModel.pets.count, id: \.self) { i in
                                         Text(viewModel.pets[i].name)
                                             .tag(i)
-                                    }
-                                }
-                                Menu("test") {
-                                    Button("test") {
-                                        print("pressed")
                                     }
                                 }
                             } label: {
