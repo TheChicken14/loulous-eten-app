@@ -78,9 +78,13 @@ struct Home: View {
                         if let pet = viewModel.selectedPet {
                             FeedingSheet(pet: pet)
                         }
+                    case .inviteSheet:
+                        AcceptInviteView(inviteCode: viewModel.inviteCode, sheetShown: $viewModel.showInviteView)
                     }
                 }
-                .fullScreenCover(isPresented: $viewModel.welcomeShown, content: { WelcomeSheet(sheetShown: $viewModel.welcomeShown) })
+                .fullScreenCover(isPresented: $viewModel.welcomeShown, content: {
+                    WelcomeSheet(sheetShown: $viewModel.welcomeShown)
+                })
                 .alert(isPresented: $viewModel.alertShown) {
                     switch viewModel.whichAlert {
                     case .alreadyFed:
@@ -144,7 +148,11 @@ struct Home: View {
                     viewModel.onOpenURL(url: url)
                 }
                 .onReceive(reloadPublisher) { output in
-                    viewModel.load()
+                    if viewModel.welcomeShown {
+                        viewModel.welcomeShown = false
+                    } else {
+                        viewModel.load()
+                    }
                 }
         }
     }
