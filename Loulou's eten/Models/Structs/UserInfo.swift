@@ -11,7 +11,8 @@ struct UserInfo: Codable {
     let id: Int
     let name: String
     let email: String
-    let googleId: String
+//    let googleId: String
+    let appleId: String
     
     let foodItems: [FoodItem]
     let pets: [Pet]
