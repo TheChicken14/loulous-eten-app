@@ -35,7 +35,8 @@
 
 // MARK: Login screen
 
-"login.name" = "Log in";
+"login.welcomeText" = "Welkom bij Loulou's app! Om te beginnen kun je hier gemakkelijk inloggen via Apple.";
+
 "login.withGoogle" = "Log in met Google";
 
 // MARK: Homescreen
@@ -79,6 +80,16 @@
 // MARK: - Manage pets
 
 "settings.pets" = "Huisdieren";
+
+// MARK: - Manage invites
+
+"settings.invites" = "Uitnodigingen";
+"invite" = "Uitnodiging";
+"invite.for %@" = "Voor %@";
+"invite.code" = "Uitnodigingscode:";
+
+"invite.scanQRCode" = "Laat degene die je wilt uitnodigen deze QR Code scannen met hun telefoon.";
+"invite.sharedPet" = "Huisdier dat wordt gedeelt:";
 
 // MARK: Feeding sheet
 
