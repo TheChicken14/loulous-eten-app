@@ -11,4 +11,5 @@ enum HomeSheet {
     case historySheet
     case welcomeSheet
     case feedingSheet
+    case inviteSheet
 }
