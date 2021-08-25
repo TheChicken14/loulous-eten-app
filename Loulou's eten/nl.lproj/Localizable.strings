@@ -21,6 +21,8 @@
 
 "general.close" = "Sluiten";
 
+"general.success" = "Succes!";
+
 // MARK: Welcome screen
 
 "welcome.title" = "Welkom";
@@ -28,10 +30,15 @@
 "welcome.subheader" = "Met Loulou's app kun je gemakkelijk het eten van je huisdier(en) bijhouden. Je kunt nu een huisdier toevoegen.";
 
 "welcome.addFirstPet" = "Eerste huisdier toevoegen";
+"welcome.addWithInvite" = "Toevoegen via uitnodiging";
 
 "welcome.next" = "Volgende";
 
 "welcome.done" = "Klaar!";
+
+// MARK: - How to accept invite
+
+"howtoinvite.header" = "Uitnodiging accepteren";
 
 // MARK: Login screen
 
@@ -88,8 +95,24 @@
 "invite.for %@" = "Voor %@";
 "invite.code" = "Uitnodigingscode:";
 
+"invite.explanation" = "Hier kan je een uitnodiging maken om iemand toe te voegen aan je huisdier. Daarna krijg je een QR code die de andere persoon kan scannen, daarna kunnen zij ook je huisdier eten geven.";
+
+"invite.create" = "Maak uitnodiging";
+"invite.createHeader" = "Uitnodigen";
+
 "invite.scanQRCode" = "Laat degene die je wilt uitnodigen deze QR Code scannen met hun telefoon.";
 "invite.sharedPet" = "Huisdier dat wordt gedeelt:";
+
+// MARK: Accept invite
+
+"invite.error" = "Oeps, Er ging iets mis!";
+"invite.tryAgain" = "Probeer het later opnieuw";
+
+"invite.petName" = "Naam huisdier:";
+
+"invite.inviterName" = "Naam uitnodigende:";
+
+"invite.accept" = "Accepteer uitnodiging";
 
 // MARK: Feeding sheet
 
