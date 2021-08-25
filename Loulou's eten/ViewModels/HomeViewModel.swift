@@ -39,7 +39,17 @@ class HomeViewModel: ObservableObject {
     @Published var welcomeShown: Bool = false {
         didSet {
             if !welcomeShown {
-                load(showLoading: true)
+                load(showLoading: true, shouldWelcome: false)
+            }
+        }
+    }
+    
+    @Published var inviteCode = ""
+    @Published var showInviteView: Bool = false {
+        didSet {
+            if !showInviteView {
+                sheetShown = false
+                load()
             }
         }
     }
@@ -55,7 +65,7 @@ class HomeViewModel: ObservableObject {
         }
     }
     
-    func load(showLoading: Bool = false) {
+    func load(showLoading: Bool = false, shouldWelcome: Bool = true) {
         if checkToken() == nil {
             return
         }
@@ -74,7 +84,9 @@ class HomeViewModel: ObservableObject {
                 }
                 
                 if userInfo.pets.count == 0 {
+                    if shouldWelcome {
                     self.showSheet(sheet: .welcomeSheet)
+                    }
                 } else {
                     self.getPetStatus()
                 }
@@ -144,22 +156,43 @@ class HomeViewModel: ObservableObject {
     
     func onOpenURL(url: URL) {
         let isDeepLink = url.scheme == "loulouapp"
-        let isHost = url.host == "feed"
+        let isFeed = url.host == "feed"
+        let isInvite = url.host == "invite"
         
-        if isDeepLink && isHost {
-            API.request("\(Config.API_URL)/loulou/hasFood").validate().responseDecodable(of: HasFoodResponse.self) { response in
-                switch response.result {
-                case .success(let res):
-                    if res.food == false {
-                        self.showSheet(sheet: .feedingSheet)
-                    } else {
-                        self.showAlert(alert: .alreadyFed)
+        if isDeepLink {
+            if isInvite {
+                var code = url.path
+                code.remove(at: code.startIndex)
+                
+                self.inviteCode = code
+                self.showInviteView = true
+                
+                if welcomeShown {
+                    welcomeShown = false
+                    sheetShown = false
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                        self.showSheet(sheet: .inviteSheet)
+                    })
+                } else {
+                    showSheet(sheet: .inviteSheet)
+                }
+            }
+            
+            if isFeed {
+                API.request("\(Config.API_URL)/loulou/hasFood").validate().responseDecodable(of: HasFoodResponse.self) { response in
+                    switch response.result {
+                    case .success(let res):
+                        if res.food == false {
+                            self.showSheet(sheet: .feedingSheet)
+                        } else {
+                            self.showAlert(alert: .alreadyFed)
+                        }
+                        
+                    case .failure(let error):
+                        print("error")
+                        print(error)
+                        self.showAlert(alert: .connectionError)
                     }
-                    
-                case .failure(let error):
-                    print("error")
-                    print(error)
-                    self.showAlert(alert: .connectionError)
                 }
             }
         }

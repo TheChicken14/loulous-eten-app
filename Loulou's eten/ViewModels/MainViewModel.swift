@@ -20,7 +20,7 @@ class MainViewModel: ObservableObject {
     }
     
     @Published var showLoginView: Bool = false
-    
+
     var reloadPublisher = PassthroughSubject<Bool, Never>()
 
     init() {
