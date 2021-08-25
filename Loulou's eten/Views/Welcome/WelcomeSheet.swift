@@ -20,14 +20,45 @@ struct WelcomeSheet: View {
                 Text("welcome.subheader")
                     .padding()
                 
-                NavigationLink("welcome.addFirstPet") {
+                NavigationLink {
                     AddFirstPetView(sheetShown: $sheetShown)
-                }
+                } label: {
+                    NavButtonLabel(label: "welcome.addFirstPet")
+                }.buttonStyle(.plain)
+                
+                NavigationLink {
+                    HowToAcceptInvite()
+                } label: {
+                    NavButtonLabel(label: "welcome.addWithInvite")
+                }.buttonStyle(.plain)
                 
                 Spacer()
             }.navigationTitle("welcome.title")
                 .navigationBarTitleDisplayMode(.inline)
         }
+    }
+}
+
+struct NavButtonLabel: View {
+    
+    var label: LocalizedStringKey
+    
+    var body: some View {
+        HStack {
+            Spacer()
+            
+            Text(label)
+                .font(.headline)
+            
+            Spacer()
+            
+            Image(systemName: "chevron.forward")
+            
+            Spacer()
+        }.foregroundColor(.white)
+            .frame(width: 280, height: 50)
+            .background(Color.blue)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }
 
