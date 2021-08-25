@@ -22,9 +22,16 @@ struct SettingsView: View {
             }
             
             NavigationLink {
-              ManagePets()
+                ManagePets()
             } label: {
                 Label("settings.pets", systemImage: "house.circle.fill")
+                    .font(Font.body.bold())
+            }
+            
+            NavigationLink {
+                ManageInvites()
+            } label: {
+                Label("settings.invites", systemImage: "person.crop.circle.fill.badge.plus")
                     .font(Font.body.bold())
             }
         }.navigationTitle("settings")
