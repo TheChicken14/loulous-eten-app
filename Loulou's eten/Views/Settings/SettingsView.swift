@@ -9,17 +9,17 @@ import SwiftUI
 
 struct SettingsView: View {
     
-    @StateObject var viewModel = SettingsViewModel()
+//    @StateObject var viewModel = SettingsViewModel()
     
     var body: some View {
         List {
-            HStack {
-                Label("general.name", systemImage: "person.fill")
-                    .font(Font.body.bold())
-                Spacer()
-                TextField("general.name", text: $viewModel.name)
-                    .multilineTextAlignment(.trailing)
-            }
+//            HStack {
+//                Label("general.name", systemImage: "person.fill")
+//                    .font(Font.body.bold())
+//                Spacer()
+//                TextField("general.name", text: $viewModel.name)
+//                    .multilineTextAlignment(.trailing)
+//            }
             
             NavigationLink {
                 ManagePets()
