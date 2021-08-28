@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8905427826D59B270025CB12 /* SIWAParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8905427726D59B270025CB12 /* SIWAParams.swift */; };
+		8905427B26D59E0E0025CB12 /* SIWAResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8905427A26D59E0E0025CB12 /* SIWAResponse.swift */; };
 		890A4AC526D29CDC0092E8EE /* HasFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890A4AC426D29CDC0092E8EE /* HasFoodView.swift */; };
 		890A4AC726D29F270092E8EE /* PetStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890A4AC626D29F260092E8EE /* PetStatus.swift */; };
+		890BB76926D65D9B00309118 /* CreateInviteSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890BB76826D65D9A00309118 /* CreateInviteSheet.swift */; };
+		89104FA926D6C0150087CDE7 /* AcceptInviteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89104FA826D6C0150087CDE7 /* AcceptInviteView.swift */; };
+		89104FAB26D6C9170087CDE7 /* HowToAcceptInvite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89104FAA26D6C9170087CDE7 /* HowToAcceptInvite.swift */; };
+		891AEB5126D5967C00EEAA05 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AEB5026D5967C00EEAA05 /* LoginViewModel.swift */; };
 		891D846C26D2A407008E88E2 /* AdaptiveStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891D846B26D2A407008E88E2 /* AdaptiveStack.swift */; };
 		891D846F26D2AC6C008E88E2 /* AddFirstPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891D846E26D2AC6C008E88E2 /* AddFirstPetView.swift */; };
 		891D847126D2AE20008E88E2 /* FirstPetDoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891D847026D2AE20008E88E2 /* FirstPetDoneView.swift */; };
@@ -18,9 +24,11 @@
 		891D847B26D2D0DE008E88E2 /* ManagePetsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891D847A26D2D0DE008E88E2 /* ManagePetsViewModel.swift */; };
 		891D847D26D2D3A4008E88E2 /* ManagePetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891D847C26D2D3A4008E88E2 /* ManagePetAlert.swift */; };
 		89264BEF26CD549500DC1EA3 /* ButtonState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89264BEE26CD549500DC1EA3 /* ButtonState.swift */; };
+		893EE91A26DA832B002746F0 /* CreatePetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893EE91926DA832B002746F0 /* CreatePetView.swift */; };
 		894B970726D044CE00DD0CC9 /* Loulou2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 894B970426D044CE00DD0CC9 /* Loulou2@3x.png */; };
 		894B970826D044CF00DD0CC9 /* Loulou2@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 894B970526D044CE00DD0CC9 /* Loulou2@1x.png */; };
 		894B970926D044CF00DD0CC9 /* Loulou2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 894B970626D044CE00DD0CC9 /* Loulou2@2x.png */; };
+		894CCAE926DABA2D0029A5DB /* CreatePetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CCAE826DABA2D0029A5DB /* CreatePetViewModel.swift */; };
 		89608E0E26CBB927004993F7 /* FeedingSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89608E0D26CBB927004993F7 /* FeedingSheet.swift */; };
 		89608E1026CBBC2D004993F7 /* FeedingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89608E0F26CBBC2D004993F7 /* FeedingViewModel.swift */; };
 		897A432926D28E1000559819 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897A432826D28E1000559819 /* MainView.swift */; };
@@ -30,6 +38,12 @@
 		897A433126D2958E00559819 /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897A433026D2958E00559819 /* FoodItem.swift */; };
 		89AEF1A826CC597100983E68 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 89AEF1AA26CC597100983E68 /* Localizable.strings */; };
 		89AEF1AE26CC622500983E68 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89AEF1AD26CC622500983E68 /* Launch Screen.storyboard */; };
+		89B9D23D26D4F7B800546D1D /* ManageInvites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B9D23C26D4F7B800546D1D /* ManageInvites.swift */; };
+		89B9D24026D4F8A900546D1D /* ManageInvitesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B9D23F26D4F8A900546D1D /* ManageInvitesViewModel.swift */; };
+		89B9D24226D4F8C300546D1D /* InviteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B9D24126D4F8C300546D1D /* InviteItem.swift */; };
+		89B9D24426D4FD3B00546D1D /* InviteItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B9D24326D4FD3B00546D1D /* InviteItemView.swift */; };
+		89B9D24626D4FF8400546D1D /* InviteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B9D24526D4FF8400546D1D /* InviteView.swift */; };
+		89B9D24826D4FFC600546D1D /* InviteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B9D24726D4FFC600546D1D /* InviteViewModel.swift */; };
 		89CB990326CBD4AB00AB5EE1 /* HomeAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CB990226CBD4AB00AB5EE1 /* HomeAlert.swift */; };
 		89CDAEA326D1AB9F00A4F612 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CDAEA226D1AB9F00A4F612 /* LoginScreen.swift */; };
 		89D3A08E26C864960001837A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D3A08D26C864960001837A /* ContentView.swift */; };
@@ -37,6 +51,8 @@
 		89D3A09326C864980001837A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89D3A09226C864980001837A /* Preview Assets.xcassets */; };
 		89D3A09C26C864C90001837A /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D3A09B26C864C90001837A /* Home.swift */; };
 		89DC37AD26D01B7200FC4E4E /* RemoveItemParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DC37AC26D01B7200FC4E4E /* RemoveItemParams.swift */; };
+		89E1746926D54E9500B875E5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 89E1746826D54E9500B875E5 /* Alamofire */; };
+		89E77C0826D4256D00835906 /* PetFeedingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E77C0726D4256D00835906 /* PetFeedingItem.swift */; };
 		89E9D10826CAA6580018CD68 /* ButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E9D10726CAA6580018CD68 /* ButtonLabel.swift */; };
 		89E9D10A26CAAFB10018CD68 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E9D10926CAAFB10018CD68 /* Config.swift */; };
 		89E9D10E26CAC0230018CD68 /* FeedingHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E9D10D26CAC0230018CD68 /* FeedingHistory.swift */; };
@@ -48,12 +64,10 @@
 		89E9D11C26CAF33E0018CD68 /* WelcomeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E9D11B26CAF33E0018CD68 /* WelcomeSheet.swift */; };
 		89E9D12126CB10FB0018CD68 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E9D12026CB10FB0018CD68 /* API.swift */; };
 		89E9D12326CB16EB0018CD68 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E9D12226CB16EB0018CD68 /* SettingsView.swift */; };
-		89E9D12526CB16F70018CD68 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E9D12426CB16F70018CD68 /* SettingsViewModel.swift */; };
 		89E9D12726CB1C1A0018CD68 /* GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E9D12626CB1C1A0018CD68 /* GradientBackground.swift */; };
 		89FD01C626C8656400D2C6D2 /* LoulousEten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FD01C526C8656400D2C6D2 /* LoulousEten.swift */; };
 		89FD01C826C865C400D2C6D2 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FD01C726C865C400D2C6D2 /* HomeViewModel.swift */; };
 		89FD01CB26C86C9900D2C6D2 /* HasFoodResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FD01CA26C86C9900D2C6D2 /* HasFoodResponse.swift */; };
-		89FD01CE26C86CDB00D2C6D2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 89FD01CD26C86CDB00D2C6D2 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -70,9 +84,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8905427726D59B270025CB12 /* SIWAParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIWAParams.swift; sourceTree = "<group>"; };
+		8905427A26D59E0E0025CB12 /* SIWAResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIWAResponse.swift; sourceTree = "<group>"; };
 		8905EB1226CE7B30004365A2 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		890A4AC426D29CDC0092E8EE /* HasFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasFoodView.swift; sourceTree = "<group>"; };
 		890A4AC626D29F260092E8EE /* PetStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetStatus.swift; sourceTree = "<group>"; };
+		890BB76826D65D9A00309118 /* CreateInviteSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateInviteSheet.swift; sourceTree = "<group>"; };
+		89104FA826D6C0150087CDE7 /* AcceptInviteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptInviteView.swift; sourceTree = "<group>"; };
+		89104FAA26D6C9170087CDE7 /* HowToAcceptInvite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToAcceptInvite.swift; sourceTree = "<group>"; };
+		891AEB4F26D5833F00EEAA05 /* Loulou's eten.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Loulou's eten.entitlements"; sourceTree = "<group>"; };
+		891AEB5026D5967C00EEAA05 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		891D846B26D2A407008E88E2 /* AdaptiveStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveStack.swift; sourceTree = "<group>"; };
 		891D846E26D2AC6C008E88E2 /* AddFirstPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFirstPetView.swift; sourceTree = "<group>"; };
 		891D847026D2AE20008E88E2 /* FirstPetDoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPetDoneView.swift; sourceTree = "<group>"; };
@@ -82,9 +103,11 @@
 		891D847A26D2D0DE008E88E2 /* ManagePetsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePetsViewModel.swift; sourceTree = "<group>"; };
 		891D847C26D2D3A4008E88E2 /* ManagePetAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePetAlert.swift; sourceTree = "<group>"; };
 		89264BEE26CD549500DC1EA3 /* ButtonState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonState.swift; sourceTree = "<group>"; };
+		893EE91926DA832B002746F0 /* CreatePetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePetView.swift; sourceTree = "<group>"; };
 		894B970426D044CE00DD0CC9 /* Loulou2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Loulou2@3x.png"; sourceTree = "<group>"; };
 		894B970526D044CE00DD0CC9 /* Loulou2@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Loulou2@1x.png"; sourceTree = "<group>"; };
 		894B970626D044CE00DD0CC9 /* Loulou2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Loulou2@2x.png"; sourceTree = "<group>"; };
+		894CCAE826DABA2D0029A5DB /* CreatePetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePetViewModel.swift; sourceTree = "<group>"; };
 		89608E0D26CBB927004993F7 /* FeedingSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedingSheet.swift; sourceTree = "<group>"; };
 		89608E0F26CBBC2D004993F7 /* FeedingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedingViewModel.swift; sourceTree = "<group>"; };
 		897A432826D28E1000559819 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -95,6 +118,12 @@
 		89AEF1A926CC597100983E68 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		89AEF1AD26CC622500983E68 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		89B4D1FD26CB1DAD00B43A71 /* Loulous-eten-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Loulous-eten-Info.plist"; sourceTree = SOURCE_ROOT; };
+		89B9D23C26D4F7B800546D1D /* ManageInvites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageInvites.swift; sourceTree = "<group>"; };
+		89B9D23F26D4F8A900546D1D /* ManageInvitesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageInvitesViewModel.swift; sourceTree = "<group>"; };
+		89B9D24126D4F8C300546D1D /* InviteItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteItem.swift; sourceTree = "<group>"; };
+		89B9D24326D4FD3B00546D1D /* InviteItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteItemView.swift; sourceTree = "<group>"; };
+		89B9D24526D4FF8400546D1D /* InviteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteView.swift; sourceTree = "<group>"; };
+		89B9D24726D4FFC600546D1D /* InviteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteViewModel.swift; sourceTree = "<group>"; };
 		89CB990226CBD4AB00AB5EE1 /* HomeAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAlert.swift; sourceTree = "<group>"; };
 		89CDAEA226D1AB9F00A4F612 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		89D3A08826C864960001837A /* Loulou's eten.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Loulou's eten.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +132,7 @@
 		89D3A09226C864980001837A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		89D3A09B26C864C90001837A /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		89DC37AC26D01B7200FC4E4E /* RemoveItemParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveItemParams.swift; sourceTree = "<group>"; };
+		89E77C0726D4256D00835906 /* PetFeedingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetFeedingItem.swift; sourceTree = "<group>"; };
 		89E9D10726CAA6580018CD68 /* ButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLabel.swift; sourceTree = "<group>"; };
 		89E9D10926CAAFB10018CD68 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		89E9D10D26CAC0230018CD68 /* FeedingHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedingHistory.swift; sourceTree = "<group>"; };
@@ -114,7 +144,6 @@
 		89E9D11B26CAF33E0018CD68 /* WelcomeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeSheet.swift; sourceTree = "<group>"; };
 		89E9D12026CB10FB0018CD68 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		89E9D12226CB16EB0018CD68 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		89E9D12426CB16F70018CD68 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		89E9D12626CB1C1A0018CD68 /* GradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackground.swift; sourceTree = "<group>"; };
 		89FD01C526C8656400D2C6D2 /* LoulousEten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoulousEten.swift; sourceTree = "<group>"; };
 		89FD01C726C865C400D2C6D2 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -126,13 +155,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89FD01CE26C86CDB00D2C6D2 /* Alamofire in Frameworks */,
+				89E1746926D54E9500B875E5 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8905427926D59DFE0025CB12 /* SIWA */ = {
+			isa = PBXGroup;
+			children = (
+				8905427726D59B270025CB12 /* SIWAParams.swift */,
+				8905427A26D59E0E0025CB12 /* SIWAResponse.swift */,
+			);
+			path = SIWA;
+			sourceTree = "<group>";
+		};
 		8905EB0F26CE7B30004365A2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +185,7 @@
 				89E9D11B26CAF33E0018CD68 /* WelcomeSheet.swift */,
 				891D846E26D2AC6C008E88E2 /* AddFirstPetView.swift */,
 				891D847026D2AE20008E88E2 /* FirstPetDoneView.swift */,
+				89104FAA26D6C9170087CDE7 /* HowToAcceptInvite.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -155,7 +194,9 @@
 			isa = PBXGroup;
 			children = (
 				89E9D12226CB16EB0018CD68 /* SettingsView.swift */,
+				893EE91926DA832B002746F0 /* CreatePetView.swift */,
 				891D847726D2D0BE008E88E2 /* ManagePets.swift */,
+				89B9D23B26D4F7A700546D1D /* Invite */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -163,8 +204,9 @@
 		891D847926D2D0D1008E88E2 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				89E9D12426CB16F70018CD68 /* SettingsViewModel.swift */,
+				894CCAE826DABA2D0029A5DB /* CreatePetViewModel.swift */,
 				891D847A26D2D0DE008E88E2 /* ManagePetsViewModel.swift */,
+				89B9D23E26D4F89B00546D1D /* Invite */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -183,15 +225,18 @@
 		89264BF126CDA75300DC1EA3 /* Structs */ = {
 			isa = PBXGroup;
 			children = (
+				8905427926D59DFE0025CB12 /* SIWA */,
 				89FD01CA26C86C9900D2C6D2 /* HasFoodResponse.swift */,
 				89E9D11326CAC0CF0018CD68 /* HistoryResponse.swift */,
 				89E9D11726CAF12C0018CD68 /* RequestParameters.swift */,
 				89DC37AC26D01B7200FC4E4E /* RemoveItemParams.swift */,
 				897A432C26D2952B00559819 /* Pet.swift */,
 				890A4AC626D29F260092E8EE /* PetStatus.swift */,
+				89E77C0726D4256D00835906 /* PetFeedingItem.swift */,
 				897A432E26D2955F00559819 /* UserInfo.swift */,
 				897A433026D2958E00559819 /* FoodItem.swift */,
 				891D847426D2AEB0008E88E2 /* CreatePetParams.swift */,
+				89B9D24126D4F8C300546D1D /* InviteItem.swift */,
 			);
 			path = Structs;
 			sourceTree = "<group>";
@@ -226,6 +271,27 @@
 			path = Icons;
 			sourceTree = "<group>";
 		};
+		89B9D23B26D4F7A700546D1D /* Invite */ = {
+			isa = PBXGroup;
+			children = (
+				89B9D23C26D4F7B800546D1D /* ManageInvites.swift */,
+				89B9D24326D4FD3B00546D1D /* InviteItemView.swift */,
+				89B9D24526D4FF8400546D1D /* InviteView.swift */,
+				890BB76826D65D9A00309118 /* CreateInviteSheet.swift */,
+				89104FA826D6C0150087CDE7 /* AcceptInviteView.swift */,
+			);
+			path = Invite;
+			sourceTree = "<group>";
+		};
+		89B9D23E26D4F89B00546D1D /* Invite */ = {
+			isa = PBXGroup;
+			children = (
+				89B9D23F26D4F8A900546D1D /* ManageInvitesViewModel.swift */,
+				89B9D24726D4FFC600546D1D /* InviteViewModel.swift */,
+			);
+			path = Invite;
+			sourceTree = "<group>";
+		};
 		89D3A07F26C864950001837A = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +312,7 @@
 		89D3A08A26C864960001837A /* Loulou's eten */ = {
 			isa = PBXGroup;
 			children = (
+				891AEB4F26D5833F00EEAA05 /* Loulou's eten.entitlements */,
 				894B970326D0449F00DD0CC9 /* Icons */,
 				89B4D1FD26CB1DAD00B43A71 /* Loulous-eten-Info.plist */,
 				89FD01C926C86C8200D2C6D2 /* Models */,
@@ -290,6 +357,7 @@
 			children = (
 				891D847926D2D0D1008E88E2 /* Settings */,
 				897A432A26D28E2600559819 /* MainViewModel.swift */,
+				891AEB5026D5967C00EEAA05 /* LoginViewModel.swift */,
 				89FD01C726C865C400D2C6D2 /* HomeViewModel.swift */,
 				89E9D11126CAC0AC0018CD68 /* FeedingHistoryViewModel.swift */,
 				89608E0F26CBBC2D004993F7 /* FeedingViewModel.swift */,
@@ -326,7 +394,7 @@
 			);
 			name = "Loulou's eten";
 			packageProductDependencies = (
-				89FD01CD26C86CDB00D2C6D2 /* Alamofire */,
+				89E1746826D54E9500B875E5 /* Alamofire */,
 			);
 			productName = "Loulou's eten";
 			productReference = 89D3A08826C864960001837A /* Loulou's eten.app */;
@@ -357,7 +425,7 @@
 			);
 			mainGroup = 89D3A07F26C864950001837A;
 			packageReferences = (
-				89FD01CC26C86CDB00D2C6D2 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				89E1746726D54E9400B875E5 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 89D3A08926C864960001837A /* Products */;
 			projectDirPath = "";
@@ -392,41 +460,55 @@
 			files = (
 				89E9D11626CAC5390018CD68 /* FeedingHistoryItemView.swift in Sources */,
 				897A432926D28E1000559819 /* MainView.swift in Sources */,
+				89B9D24026D4F8A900546D1D /* ManageInvitesViewModel.swift in Sources */,
+				8905427826D59B270025CB12 /* SIWAParams.swift in Sources */,
 				89DC37AD26D01B7200FC4E4E /* RemoveItemParams.swift in Sources */,
+				89B9D24626D4FF8400546D1D /* InviteView.swift in Sources */,
 				897A433126D2958E00559819 /* FoodItem.swift in Sources */,
+				89B9D24226D4F8C300546D1D /* InviteItem.swift in Sources */,
 				89E9D10826CAA6580018CD68 /* ButtonLabel.swift in Sources */,
 				89CDAEA326D1AB9F00A4F612 /* LoginScreen.swift in Sources */,
 				89E9D11C26CAF33E0018CD68 /* WelcomeSheet.swift in Sources */,
 				897A432F26D2955F00559819 /* UserInfo.swift in Sources */,
 				89608E0E26CBB927004993F7 /* FeedingSheet.swift in Sources */,
 				891D847B26D2D0DE008E88E2 /* ManagePetsViewModel.swift in Sources */,
+				89104FAB26D6C9170087CDE7 /* HowToAcceptInvite.swift in Sources */,
 				89CB990326CBD4AB00AB5EE1 /* HomeAlert.swift in Sources */,
+				89104FA926D6C0150087CDE7 /* AcceptInviteView.swift in Sources */,
 				89264BEF26CD549500DC1EA3 /* ButtonState.swift in Sources */,
+				890BB76926D65D9B00309118 /* CreateInviteSheet.swift in Sources */,
 				89E9D11A26CAF2360018CD68 /* HomeSheet.swift in Sources */,
 				89608E1026CBBC2D004993F7 /* FeedingViewModel.swift in Sources */,
+				8905427B26D59E0E0025CB12 /* SIWAResponse.swift in Sources */,
 				89E9D12326CB16EB0018CD68 /* SettingsView.swift in Sources */,
 				89D3A09C26C864C90001837A /* Home.swift in Sources */,
 				89E9D11226CAC0AC0018CD68 /* FeedingHistoryViewModel.swift in Sources */,
+				89B9D23D26D4F7B800546D1D /* ManageInvites.swift in Sources */,
 				89E9D11426CAC0CF0018CD68 /* HistoryResponse.swift in Sources */,
+				894CCAE926DABA2D0029A5DB /* CreatePetViewModel.swift in Sources */,
 				89D3A08E26C864960001837A /* ContentView.swift in Sources */,
 				891D847326D2AE47008E88E2 /* AddFirstPetViewModel.swift in Sources */,
 				897A432B26D28E2600559819 /* MainViewModel.swift in Sources */,
+				89B9D24826D4FFC600546D1D /* InviteViewModel.swift in Sources */,
 				89E9D10E26CAC0230018CD68 /* FeedingHistory.swift in Sources */,
+				891AEB5126D5967C00EEAA05 /* LoginViewModel.swift in Sources */,
 				89E9D10A26CAAFB10018CD68 /* Config.swift in Sources */,
 				89FD01C626C8656400D2C6D2 /* LoulousEten.swift in Sources */,
 				891D846C26D2A407008E88E2 /* AdaptiveStack.swift in Sources */,
 				890A4AC726D29F270092E8EE /* PetStatus.swift in Sources */,
 				897A432D26D2952B00559819 /* Pet.swift in Sources */,
+				893EE91A26DA832B002746F0 /* CreatePetView.swift in Sources */,
 				89FD01C826C865C400D2C6D2 /* HomeViewModel.swift in Sources */,
 				89FD01CB26C86C9900D2C6D2 /* HasFoodResponse.swift in Sources */,
+				89B9D24426D4FD3B00546D1D /* InviteItemView.swift in Sources */,
 				891D847526D2AEB0008E88E2 /* CreatePetParams.swift in Sources */,
+				89E77C0826D4256D00835906 /* PetFeedingItem.swift in Sources */,
 				891D847126D2AE20008E88E2 /* FirstPetDoneView.swift in Sources */,
 				89E9D12126CB10FB0018CD68 /* API.swift in Sources */,
 				891D847826D2D0BE008E88E2 /* ManagePets.swift in Sources */,
 				89E9D11826CAF12C0018CD68 /* RequestParameters.swift in Sources */,
 				89E9D12726CB1C1A0018CD68 /* GradientBackground.swift in Sources */,
 				890A4AC526D29CDC0092E8EE /* HasFoodView.swift in Sources */,
-				89E9D12526CB16F70018CD68 /* SettingsViewModel.swift in Sources */,
 				891D846F26D2AC6C008E88E2 /* AddFirstPetView.swift in Sources */,
 				891D847D26D2D3A4008E88E2 /* ManagePetAlert.swift in Sources */,
 			);
@@ -568,10 +650,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Loulou's eten/Loulou's eten.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Loulou's eten/Preview Content\"";
-				DEVELOPMENT_TEAM = U3CH3X8GK4;
+				DEVELOPMENT_TEAM = C4HKS39B24;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Loulous-eten-Info.plist";
@@ -586,8 +669,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "nl.wissehes.Loulous-app";
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "nl.wissehes.Loulou-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -601,10 +684,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Loulou's eten/Loulou's eten.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Loulou's eten/Preview Content\"";
-				DEVELOPMENT_TEAM = U3CH3X8GK4;
+				DEVELOPMENT_TEAM = C4HKS39B24;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Loulous-eten-Info.plist";
@@ -619,8 +703,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "nl.wissehes.Loulous-app";
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "nl.wissehes.Loulou-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -652,20 +736,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		89FD01CC26C86CDB00D2C6D2 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		89E1746726D54E9400B875E5 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.4.0;
+				branch = xcode13;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		89FD01CD26C86CDB00D2C6D2 /* Alamofire */ = {
+		89E1746826D54E9500B875E5 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 89FD01CC26C86CDB00D2C6D2 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 89E1746726D54E9400B875E5 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
