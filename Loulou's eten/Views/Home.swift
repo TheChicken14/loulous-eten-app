@@ -42,21 +42,21 @@ struct Home: View {
                                 )
                                 Spacer()
                             }
-                        }
-                        
-                        if !viewModel.hasBreakfast || !viewModel.hasDinner {
-                            Button {
-                                viewModel.giveFood()
-                            } label: {
-                                switch viewModel.giveFoodLoading {
-                                case true:
-                                    ProgressView()
-                                case false:
-                                    ButtonLabel(
-                                        title: "home.fedButton",
-                                        imageName: "person.fill.checkmark",
-                                        color: .green
-                                    )
+                            
+                            if !viewModel.hasBreakfast || !viewModel.hasDinner {
+                                Button {
+                                    viewModel.giveFood()
+                                } label: {
+                                    switch viewModel.giveFoodLoading {
+                                    case true:
+                                        ProgressView()
+                                    case false:
+                                        ButtonLabel(
+                                            title: "home.fedButton \(pet.name)",
+                                            imageName: "person.fill.checkmark",
+                                            color: .green
+                                        )
+                                    }
                                 }
                             }
                         }
@@ -79,7 +79,9 @@ struct Home: View {
                             FeedingSheet(pet: pet)
                         }
                     case .inviteSheet:
-                        AcceptInviteView(inviteCode: viewModel.inviteCode, sheetShown: $viewModel.showInviteView)
+                        AcceptInviteView(inviteCode: viewModel.inviteCode, sheetShown: $viewModel.sheetShown)
+                    case .createPetSheet:
+                        CreatePetView()
                     }
                 }
                 .fullScreenCover(isPresented: $viewModel.welcomeShown, content: {
@@ -119,6 +121,12 @@ struct Home: View {
                                         Text(viewModel.pets[i].name)
                                             .tag(i)
                                     }
+                                }
+                                
+                                Button {
+                                    viewModel.showSheet(sheet: .createPetSheet)
+                                } label: {
+                                    Label("home.addPet", systemImage: "plus")
                                 }
                             } label: {
                                 Text(viewModel.selectedPet?.name ?? "home.pet")
