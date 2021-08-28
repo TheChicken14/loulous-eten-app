@@ -33,7 +33,13 @@ class HomeViewModel: ObservableObject {
     @Published var hasDinner: Bool = false
     @Published var dinnerItem: FoodItem?
     
-    @Published var sheetShown: Bool = false
+    @Published var sheetShown: Bool = false {
+        didSet {
+            if !sheetShown {
+                load(showLoading: false)
+            }
+        }
+    }
     @Published var whichSheet: HomeSheet = .historySheet
     
     @Published var welcomeShown: Bool = false {
@@ -45,14 +51,6 @@ class HomeViewModel: ObservableObject {
     }
     
     @Published var inviteCode = ""
-    @Published var showInviteView: Bool = false {
-        didSet {
-            if !showInviteView {
-                sheetShown = false
-                load()
-            }
-        }
-    }
     
     @Published var alertShown: Bool = false
     @Published var whichAlert: HomeAlert = .connectionError
@@ -115,8 +113,14 @@ class HomeViewModel: ObservableObject {
                 self.loading = false
                 
             case .failure(let error):
-                print(error)
-                self.showAlert(alert: .connectionError)
+                if error.responseCode == 404 {
+                    self.selectedPet = nil
+                    self.selectedPetIndex = 0
+                    self.load()
+                } else {
+                    print(error)
+                    self.showAlert(alert: .connectionError)
+                }
             }
         }
     }
@@ -165,7 +169,7 @@ class HomeViewModel: ObservableObject {
                 code.remove(at: code.startIndex)
                 
                 self.inviteCode = code
-                self.showInviteView = true
+//                self.showInviteView = true
                 
                 if welcomeShown {
                     welcomeShown = false
