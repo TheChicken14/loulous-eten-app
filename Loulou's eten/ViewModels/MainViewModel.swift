@@ -24,6 +24,11 @@ class MainViewModel: ObservableObject {
     var reloadPublisher = PassthroughSubject<Bool, Never>()
 
     init() {
+        
+        #if targetEnvironment(simulator)
+        UserDefaults.standard.set(Config.SIMULATOR_KEY, forKey: "token")
+        #endif
+        
         let token = UserDefaults.standard.string(forKey: "token")
         if token != nil {
             isLoggedIn = true
