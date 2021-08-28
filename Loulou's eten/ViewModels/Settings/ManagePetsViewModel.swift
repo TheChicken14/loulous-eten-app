@@ -13,7 +13,7 @@ class ManagePetsViewModel: ObservableObject {
     @Published var alertShown: Bool = false
     @Published var whichAlert: ManagePetAlert = .connectionError
     
-    private var deletingIndexes: [Int] = []
+    private var deletingIndexes: IndexSet?
     
     init() {
         load()
@@ -32,16 +32,24 @@ class ManagePetsViewModel: ObservableObject {
     }
     
     func delete(at offsets: IndexSet) {
-        deletingIndexes = offsets.map { $0 }
+        deletingIndexes = offsets
         
         showAlert(alert: .areYouSure)
         print(offsets)
     }
     
     func imSure() {
-        for index in deletingIndexes {
-            print(index)
+        guard let indexSet = deletingIndexes else {
+            return
         }
+        
+        let ids = indexSet.map { self.pets[$0].id }
+        
+        for id in ids {
+            API.request("\(Config.API_URL)/pet/delete/\(id)", method: .delete).validate().response { _ in }
+        }
+        
+        self.pets.remove(atOffsets: indexSet)
     }
     
     func showAlert(alert: ManagePetAlert) {
