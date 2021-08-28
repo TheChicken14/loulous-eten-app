@@ -27,6 +27,10 @@ struct CreateInviteSheet: View {
                 if loading {
                     ProgressView()
                 } else {
+                    
+                    Text("createInvite.explanation")
+                        .font(.subheadline)
+                    
                     HStack {
                         Label("home.pet", systemImage: "leaf.fill")
                         Spacer()
