@@ -60,11 +60,13 @@
 
 "home.fedByOnTime %@ %@" = "Om %1$@ uur door %2$@";
 
-"home.fedButton" = "Ik heb Loulou eten gegeven";
+"home.fedButton %@" = "Ik heb %@ eten gegeven";
 "home.undo" = "Ongedaan maken";
 "home.areYouSure" = "Weet je het zeker?";
 
 "home.reload" = "Herladen";
+
+"home.addPet" = "Huisdier toevoegen";
 
 // MARK: Alerts
 
@@ -88,6 +90,10 @@
 
 "settings.pets" = "Huisdieren";
 
+// MARK: - Add pet
+
+"addPet.name" = "Huisdier toevoegen";
+
 // MARK: - Manage invites
 
 "settings.invites" = "Uitnodigingen";
@@ -98,7 +104,9 @@
 "invite.explanation" = "Hier kan je een uitnodiging maken om iemand toe te voegen aan je huisdier. Daarna krijg je een QR code die de andere persoon kan scannen, daarna kunnen zij ook je huisdier eten geven.";
 
 "invite.create" = "Maak uitnodiging";
-"invite.createHeader" = "Uitnodigen";
+"invite.createHeader" = "Uitnodiging aanmaken";
+
+"createInvite.explanation" = "Hier maak je een uitnodiging aan, je krijgt dan een QR Code die de andere persoon kan scannen met hun telefoon.";
 
 "invite.scanQRCode" = "Laat degene die je wilt uitnodigen deze QR Code scannen met hun telefoon.";
 "invite.sharedPet" = "Huisdier dat wordt gedeelt:";
