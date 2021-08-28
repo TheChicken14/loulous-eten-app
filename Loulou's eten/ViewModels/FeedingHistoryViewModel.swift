@@ -11,6 +11,8 @@ import Alamofire
 class FeedingHistoryViewModel: ObservableObject {
     @Published var loading: Bool = true
     @Published var error: Bool = false
+
+    @Published var reloadButtonDisabled: Bool = false
     
     @Published var pets: [Pet] = []
     @Published var selectedPetIndex: Int = 0 {
@@ -27,6 +29,15 @@ class FeedingHistoryViewModel: ObservableObject {
     }
     
     @Published var feedingHistory: [PetFeedingItem] = []
+    
+    func reloadButtonPress() {
+        loading = true
+        reloadButtonDisabled = true
+        
+        load()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: { self.reloadButtonDisabled = false })
+    }
     
     func load() {
         loadPets()

@@ -15,17 +15,18 @@ struct FeedingHistory: View {
     var body: some View {
         NavigationView {
             List {
-                if viewModel.loading {
+                ForEach(viewModel.feedingHistory, id: \.id) { item in
+                    FeedingHistoryItemView(feedingItem: item)
+                }
+                
+                if viewModel.feedingHistory.count == 0 && !viewModel.loading {
                     HStack {
                         Spacer()
-                        ProgressView()
+                        Text("Nog niks!")
                         Spacer()
                     }
                 }
                 
-                ForEach(viewModel.feedingHistory, id: \.id) { item in
-                    FeedingHistoryItemView(feedingItem: item)
-                }
             }.navigationTitle("general.history")
                 .onAppear(perform: viewModel.load)
                 .toolbar {
@@ -43,10 +44,14 @@ struct FeedingHistory: View {
                         }
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button {
-                            viewModel.load()
-                        } label: {
-                            Label("home.reload", systemImage: "arrow.clockwise")
+                        if viewModel.loading {
+                            ProgressView()
+                        } else {
+                            Button {
+                                viewModel.reloadButtonPress()
+                            } label: {
+                                Label("home.reload", systemImage: "arrow.clockwise")
+                            }.disabled(viewModel.reloadButtonDisabled)
                         }
                     }
                 }
