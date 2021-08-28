@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ButtonLabel: View {
-    var title: String
+    var title: LocalizedStringKey
     var imageName: String
     var color: Color
     var state: ButtonState?
@@ -17,7 +17,7 @@ struct ButtonLabel: View {
         if let state = state {
             switch state {
             case .normal:
-                Label(LocalizedStringKey(title), systemImage: imageName)
+                Label(title, systemImage: imageName)
                     .frame(width: 280, height: 50)
                     .background(color)
                     .foregroundColor(.white)
@@ -39,7 +39,7 @@ struct ButtonLabel: View {
                     .padding()
             }
         } else {
-        Label(LocalizedStringKey(title), systemImage: imageName)
+        Label(title, systemImage: imageName)
             .frame(width: 280, height: 50)
             .background(color)
             .foregroundColor(.white)
