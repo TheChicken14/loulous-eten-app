@@ -12,4 +12,5 @@ enum HomeSheet {
     case welcomeSheet
     case feedingSheet
     case inviteSheet
+    case createPetSheet
 }
