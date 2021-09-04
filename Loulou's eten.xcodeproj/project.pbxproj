@@ -29,6 +29,7 @@
 		894B970826D044CF00DD0CC9 /* Loulou2@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 894B970526D044CE00DD0CC9 /* Loulou2@1x.png */; };
 		894B970926D044CF00DD0CC9 /* Loulou2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 894B970626D044CE00DD0CC9 /* Loulou2@2x.png */; };
 		894CCAE926DABA2D0029A5DB /* CreatePetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CCAE826DABA2D0029A5DB /* CreatePetViewModel.swift */; };
+		895E995426DF6A31003ACDDB /* CreateInviteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895E995326DF6A31003ACDDB /* CreateInviteViewModel.swift */; };
 		89608E0E26CBB927004993F7 /* FeedingSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89608E0D26CBB927004993F7 /* FeedingSheet.swift */; };
 		89608E1026CBBC2D004993F7 /* FeedingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89608E0F26CBBC2D004993F7 /* FeedingViewModel.swift */; };
 		897A432926D28E1000559819 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897A432826D28E1000559819 /* MainView.swift */; };
@@ -44,6 +45,7 @@
 		89B9D24426D4FD3B00546D1D /* InviteItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B9D24326D4FD3B00546D1D /* InviteItemView.swift */; };
 		89B9D24626D4FF8400546D1D /* InviteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B9D24526D4FF8400546D1D /* InviteView.swift */; };
 		89B9D24826D4FFC600546D1D /* InviteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B9D24726D4FFC600546D1D /* InviteViewModel.swift */; };
+		89C692AF26E277FC007C9C43 /* PetProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C692AE26E277FC007C9C43 /* PetProfile.swift */; };
 		89CB990326CBD4AB00AB5EE1 /* HomeAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CB990226CBD4AB00AB5EE1 /* HomeAlert.swift */; };
 		89CDAEA326D1AB9F00A4F612 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CDAEA226D1AB9F00A4F612 /* LoginScreen.swift */; };
 		89D3A08E26C864960001837A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D3A08D26C864960001837A /* ContentView.swift */; };
@@ -108,6 +110,7 @@
 		894B970526D044CE00DD0CC9 /* Loulou2@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Loulou2@1x.png"; sourceTree = "<group>"; };
 		894B970626D044CE00DD0CC9 /* Loulou2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Loulou2@2x.png"; sourceTree = "<group>"; };
 		894CCAE826DABA2D0029A5DB /* CreatePetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePetViewModel.swift; sourceTree = "<group>"; };
+		895E995326DF6A31003ACDDB /* CreateInviteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateInviteViewModel.swift; sourceTree = "<group>"; };
 		89608E0D26CBB927004993F7 /* FeedingSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedingSheet.swift; sourceTree = "<group>"; };
 		89608E0F26CBBC2D004993F7 /* FeedingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedingViewModel.swift; sourceTree = "<group>"; };
 		897A432826D28E1000559819 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -124,6 +127,7 @@
 		89B9D24326D4FD3B00546D1D /* InviteItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteItemView.swift; sourceTree = "<group>"; };
 		89B9D24526D4FF8400546D1D /* InviteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteView.swift; sourceTree = "<group>"; };
 		89B9D24726D4FFC600546D1D /* InviteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteViewModel.swift; sourceTree = "<group>"; };
+		89C692AE26E277FC007C9C43 /* PetProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfile.swift; sourceTree = "<group>"; };
 		89CB990226CBD4AB00AB5EE1 /* HomeAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAlert.swift; sourceTree = "<group>"; };
 		89CDAEA226D1AB9F00A4F612 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		89D3A08826C864960001837A /* Loulou's eten.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Loulou's eten.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -226,12 +230,11 @@
 			isa = PBXGroup;
 			children = (
 				8905427926D59DFE0025CB12 /* SIWA */,
+				89C692B026E27803007C9C43 /* Pet */,
 				89FD01CA26C86C9900D2C6D2 /* HasFoodResponse.swift */,
 				89E9D11326CAC0CF0018CD68 /* HistoryResponse.swift */,
 				89E9D11726CAF12C0018CD68 /* RequestParameters.swift */,
 				89DC37AC26D01B7200FC4E4E /* RemoveItemParams.swift */,
-				897A432C26D2952B00559819 /* Pet.swift */,
-				890A4AC626D29F260092E8EE /* PetStatus.swift */,
 				89E77C0726D4256D00835906 /* PetFeedingItem.swift */,
 				897A432E26D2955F00559819 /* UserInfo.swift */,
 				897A433026D2958E00559819 /* FoodItem.swift */,
@@ -288,8 +291,19 @@
 			children = (
 				89B9D23F26D4F8A900546D1D /* ManageInvitesViewModel.swift */,
 				89B9D24726D4FFC600546D1D /* InviteViewModel.swift */,
+				895E995326DF6A31003ACDDB /* CreateInviteViewModel.swift */,
 			);
 			path = Invite;
+			sourceTree = "<group>";
+		};
+		89C692B026E27803007C9C43 /* Pet */ = {
+			isa = PBXGroup;
+			children = (
+				897A432C26D2952B00559819 /* Pet.swift */,
+				890A4AC626D29F260092E8EE /* PetStatus.swift */,
+				89C692AE26E277FC007C9C43 /* PetProfile.swift */,
+			);
+			path = Pet;
 			sourceTree = "<group>";
 		};
 		89D3A07F26C864950001837A = {
@@ -463,6 +477,7 @@
 				89B9D24026D4F8A900546D1D /* ManageInvitesViewModel.swift in Sources */,
 				8905427826D59B270025CB12 /* SIWAParams.swift in Sources */,
 				89DC37AD26D01B7200FC4E4E /* RemoveItemParams.swift in Sources */,
+				895E995426DF6A31003ACDDB /* CreateInviteViewModel.swift in Sources */,
 				89B9D24626D4FF8400546D1D /* InviteView.swift in Sources */,
 				897A433126D2958E00559819 /* FoodItem.swift in Sources */,
 				89B9D24226D4F8C300546D1D /* InviteItem.swift in Sources */,
@@ -510,6 +525,7 @@
 				89E9D12726CB1C1A0018CD68 /* GradientBackground.swift in Sources */,
 				890A4AC526D29CDC0092E8EE /* HasFoodView.swift in Sources */,
 				891D846F26D2AC6C008E88E2 /* AddFirstPetView.swift in Sources */,
+				89C692AF26E277FC007C9C43 /* PetProfile.swift in Sources */,
 				891D847D26D2D3A4008E88E2 /* ManagePetAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
