@@ -83,12 +83,12 @@ class HomeViewModel: ObservableObject {
                 
                 if userInfo.pets.count == 0 {
                     if shouldWelcome {
-                    self.showSheet(sheet: .welcomeSheet)
+                        self.showSheet(sheet: .welcomeSheet)
                     }
                 } else {
                     self.getPetStatus()
                 }
-                                
+                
             case .failure(let error):
                 print(error)
                 self.showAlert(alert: .connectionError)
@@ -169,7 +169,7 @@ class HomeViewModel: ObservableObject {
                 code.remove(at: code.startIndex)
                 
                 self.inviteCode = code
-//                self.showInviteView = true
+                //                self.showInviteView = true
                 
                 if welcomeShown {
                     welcomeShown = false
