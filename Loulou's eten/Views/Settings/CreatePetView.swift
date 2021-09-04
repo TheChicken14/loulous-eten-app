@@ -21,8 +21,57 @@ struct CreatePetView: View {
                     
                     Spacer()
                     
-                    TextField(LocalizedStringKey("general.name"), text: $viewModel.name)
+                    TextField(LocalizedStringKey("general.name"), text: $viewModel.pet.name)
                         .multilineTextAlignment(.trailing)
+                }
+                
+                HStack {
+                    DatePicker( selection: $viewModel.pet.birthdate, displayedComponents: [.date]) {
+                        Label("createPet.birthday", systemImage: "calendar")
+                            .font(Font.body.bold())
+                    }
+                }
+                
+                HStack {
+                    Label("createPet.morningFood", systemImage: "leaf.fill")
+                        .font(Font.body.bold())
+                    Spacer()
+                    TextField(
+                        LocalizedStringKey("createPet.morningFood"),
+                        text: $viewModel.pet.morningFood
+                    )
+                        .multilineTextAlignment(.trailing)
+                }
+                
+                HStack {
+                    Label("createPet.eveningFood", systemImage: "leaf.fill")
+                        .font(Font.body.bold())
+                    Spacer()
+                    TextField(
+                        LocalizedStringKey("createPet.eveningFood"),
+                        text: $viewModel.pet.dinnerFood
+                    )
+                        .multilineTextAlignment(.trailing)
+                }
+                
+                NavigationLink {
+                    ZStack {
+                        TextEditor(text: $viewModel.pet.extraNotes)
+                            .padding(.horizontal)
+                        
+                        if  viewModel.pet.extraNotes.isEmpty {
+                            VStack(alignment: .leading) {
+                            Text("createPet.extraNotes")
+                                .font(.custom("Helvetica", size: 24))
+                                .opacity(0.25)
+                                .multilineTextAlignment(.leading)
+                            }
+                        }
+                    }
+                    .navigationTitle("createPet.extraNotes")
+                } label: {
+                    Label("createPet.extraNotes", systemImage: "text.bubble.fill")
+                        .font(Font.body.bold())
                 }
                 
                 HStack {
