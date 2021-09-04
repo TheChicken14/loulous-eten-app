@@ -141,3 +141,16 @@
 "feedingHistory.by %@" = "Door %@";
 
 "feedingHistory.remove" = "Verwijderen";
+
+// MARK: Create pet screen
+
+"createPet" = "Huisdier toevoegen";
+
+"createPet.header" = "Vul hier het profiel van je huisdier in.";
+
+"createPet.birthday" = "Geboortedatum";
+
+"createPet.morningFood" = "Ochtendeten";
+"createPet.eveningFood" = "Avondeten";
+
+"createPet.extraNotes" = "Extra notities";
