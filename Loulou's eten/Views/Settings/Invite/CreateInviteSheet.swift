@@ -11,20 +11,12 @@ struct CreateInviteSheet: View {
     
     @Binding var sheetShown: Bool
     
-    @State var savingState: ButtonState = .normal
-    @State var loading: Bool = true
-    @State var selectedPetIndex: Int = 0 {
-        didSet {
-            self.selectedPet = self.pets[selectedPetIndex]
-        }
-    }
-    @State var selectedPet: Pet?
-    @State var pets: [Pet] = []
+    @StateObject var viewModel = CreateInviteViewModel()
     
     var body: some View {
         NavigationView {
             Form {
-                if loading {
+                if viewModel.loading {
                     ProgressView()
                 } else {
                     
@@ -34,9 +26,10 @@ struct CreateInviteSheet: View {
                     HStack {
                         Label("home.pet", systemImage: "leaf.fill")
                         Spacer()
-                        Picker("home.pet", selection: $selectedPet) {
-                            ForEach(0..<pets.count, id: \.self) { index in
-                                Text(pets[index].name).tag(index)
+                        Picker("home.pet", selection: $viewModel.selectedPetIndex) {
+                            ForEach(0..<viewModel.pets.count, id: \.self) { index in
+                                Text(viewModel.pets[index].name)
+                                    .tag(index)
                             }
                         }.pickerStyle(.menu)
                     }
@@ -45,9 +38,9 @@ struct CreateInviteSheet: View {
                         Spacer()
                         
                         Button {
-                            createInvite()
+                            viewModel.createInvite()
                         } label: {
-                            switch savingState {
+                            switch viewModel.savingState {
                             case .normal:
                                 Label("general.done", systemImage: "checkmark")
                             case .loading:
@@ -55,13 +48,13 @@ struct CreateInviteSheet: View {
                             case .success:
                                 Label("general.success", systemImage: "checkmark.circle")
                             }
-                        }.disabled(savingState == .loading || savingState == .success)
+                        }.disabled(viewModel.savingState == .loading || viewModel.savingState == .success)
                         
                         Spacer()
                     }
                 }
             }
-            .onAppear(perform: loadPets)
+            .onAppear(perform: viewModel.loadPets)
             .navigationTitle("invite.createHeader")
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
@@ -72,31 +65,11 @@ struct CreateInviteSheet: View {
                     }
                 }
             }
-        }
-    }
-    
-    func loadPets() {
-        API.request("\(Config.API_URL)/user/info").validate().responseDecodable(of: UserInfo.self){ response in
-            switch response.result {
-            case .success(let user):
-                self.pets = user.pets
-                self.selectedPet = user.pets[0]
-                self.loading = false
-            case .failure(let error):
-                print(error)
+            .onReceive(viewModel.viewDismissalModePublisher) { output in
+                if output {
+                    self.sheetShown = false
+                }
             }
-        }
-    }
-    
-    func createInvite() {
-        guard let pet = selectedPet else {
-            return
-        }
-        
-        savingState = .loading
-        API.request("\(Config.API_URL)/invite/create/\(pet.id)", method: .post).validate().response { response in
-            savingState = .success
-            sheetShown = false
         }
     }
 }
