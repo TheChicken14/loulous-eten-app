@@ -9,7 +9,8 @@ import SwiftUI
 
 struct FirstPetDoneView: View {
     
-    var name: String
+    var petProfile: CreatePetProfileData
+    
     @Binding var sheetShown: Bool
 
     @StateObject var viewModel = AddFirstPetViewModel()
@@ -34,7 +35,7 @@ struct FirstPetDoneView: View {
                 }
             }
         }.onAppear {
-            viewModel.addPet(name: name)
+            viewModel.addPet(petProfile: petProfile)
         }
     }
 }
@@ -42,7 +43,13 @@ struct FirstPetDoneView: View {
 struct FirstPetDoneView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            FirstPetDoneView(name: "botch", sheetShown: .constant(true))
+            FirstPetDoneView(petProfile: CreatePetProfileData(
+                name: "",
+                birthdate: Date(),
+                morningFood: "",
+                dinnerFood: "",
+                extraNotes: ""
+            ) ,sheetShown: .constant(true))
         }
     }
 }
