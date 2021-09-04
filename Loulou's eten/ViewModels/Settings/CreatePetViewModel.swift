@@ -8,12 +8,19 @@
 import Foundation
 import UIKit
 import Combine
+import Alamofire
 
 final class CreatePetViewModel: ObservableObject {
     @Published var buttonState: ButtonState = .normal
     @Published var error: Bool = false
     
-    @Published var name: String = ""
+    @Published var pet = CreatePetProfileData(
+        name: "",
+        birthdate: Date(),
+        morningFood: "",
+        dinnerFood: "",
+        extraNotes: ""
+    )
     
     var viewDismissalModePublisher = PassthroughSubject<Bool, Never>()
     private var shouldDismissView = false {
@@ -23,14 +30,16 @@ final class CreatePetViewModel: ObservableObject {
     }
     
     func createPet() {
-        if name.trimmingCharacters(in: .whitespacesAndNewlines).count == 0 {
+        if pet.name.trimmingCharacters(in: .whitespacesAndNewlines).count == 0 {
             return;
         }
         
         buttonState = .loading
         
-        let params = CreatePetParams(name: name)
-        API.request("\(Config.API_URL)/pet/create", method: .post, parameters: params).validate().response { response in
+        let params = pet
+        let encoder = URLEncodedFormParameterEncoder(encoder: URLEncodedFormEncoder(dateEncoding: .iso8601))
+
+        API.request("\(Config.API_URL)/pet/create", method: .post, parameters: params, encoder: encoder).validate().response { response in
             switch response.result {
             case .success(_):
                 self.buttonState = .success
