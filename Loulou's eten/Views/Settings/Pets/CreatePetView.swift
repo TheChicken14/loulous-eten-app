@@ -16,8 +16,8 @@ struct CreatePetView: View {
         NavigationView {
             Form {
                 HStack {
-                    Text("general.name")
-                        .bold()
+                    Label("general.name", systemImage: "circle.dashed.inset.fill")
+                        .font(Font.body.bold())
                     
                     Spacer()
                     
