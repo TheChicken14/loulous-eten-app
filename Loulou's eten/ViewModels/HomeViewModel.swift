@@ -76,7 +76,6 @@ class HomeViewModel: ObservableObject {
             case .success(let userInfo):
                 self.userInfo = userInfo
                 self.pets = userInfo.pets
-                print(self.pets)
                 if self.selectedPet == nil {
                     self.selectedPet = self.pets.first
                 }
