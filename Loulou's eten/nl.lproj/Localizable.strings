@@ -23,6 +23,8 @@
 
 "general.success" = "Succes!";
 
+"general.save" = "Opslaan";
+
 // MARK: Welcome screen
 
 "welcome.title" = "Welkom";
