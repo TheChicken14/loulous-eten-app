@@ -14,6 +14,9 @@
 		890BB76926D65D9B00309118 /* CreateInviteSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890BB76826D65D9A00309118 /* CreateInviteSheet.swift */; };
 		89104FA926D6C0150087CDE7 /* AcceptInviteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89104FA826D6C0150087CDE7 /* AcceptInviteView.swift */; };
 		89104FAB26D6C9170087CDE7 /* HowToAcceptInvite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89104FAA26D6C9170087CDE7 /* HowToAcceptInvite.swift */; };
+		8914570826E3B0260086EC87 /* PetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8914570726E3B0260086EC87 /* PetView.swift */; };
+		8914570A26E3ED3B0086EC87 /* PetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8914570926E3ED3B0086EC87 /* PetViewModel.swift */; };
+		8914570C26E3EE340086EC87 /* PetOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8914570B26E3EE340086EC87 /* PetOwner.swift */; };
 		891AEB5126D5967C00EEAA05 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AEB5026D5967C00EEAA05 /* LoginViewModel.swift */; };
 		891D846C26D2A407008E88E2 /* AdaptiveStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891D846B26D2A407008E88E2 /* AdaptiveStack.swift */; };
 		891D846F26D2AC6C008E88E2 /* AddFirstPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891D846E26D2AC6C008E88E2 /* AddFirstPetView.swift */; };
@@ -24,6 +27,7 @@
 		891D847B26D2D0DE008E88E2 /* ManagePetsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891D847A26D2D0DE008E88E2 /* ManagePetsViewModel.swift */; };
 		891D847D26D2D3A4008E88E2 /* ManagePetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891D847C26D2D3A4008E88E2 /* ManagePetAlert.swift */; };
 		89264BEF26CD549500DC1EA3 /* ButtonState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89264BEE26CD549500DC1EA3 /* ButtonState.swift */; };
+		893273F726F3ADCA00D59C7A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 893273F626F3ADCA00D59C7A /* Alamofire */; };
 		893EE91A26DA832B002746F0 /* CreatePetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893EE91926DA832B002746F0 /* CreatePetView.swift */; };
 		894B970726D044CE00DD0CC9 /* Loulou2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 894B970426D044CE00DD0CC9 /* Loulou2@3x.png */; };
 		894B970826D044CF00DD0CC9 /* Loulou2@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 894B970526D044CE00DD0CC9 /* Loulou2@1x.png */; };
@@ -32,6 +36,7 @@
 		895E995426DF6A31003ACDDB /* CreateInviteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895E995326DF6A31003ACDDB /* CreateInviteViewModel.swift */; };
 		89608E0E26CBB927004993F7 /* FeedingSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89608E0D26CBB927004993F7 /* FeedingSheet.swift */; };
 		89608E1026CBBC2D004993F7 /* FeedingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89608E0F26CBBC2D004993F7 /* FeedingViewModel.swift */; };
+		8960A9F626FA363300369EEB /* ExtraNotesSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8960A9F526FA363300369EEB /* ExtraNotesSheet.swift */; };
 		897A432926D28E1000559819 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897A432826D28E1000559819 /* MainView.swift */; };
 		897A432B26D28E2600559819 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897A432A26D28E2600559819 /* MainViewModel.swift */; };
 		897A432D26D2952B00559819 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897A432C26D2952B00559819 /* Pet.swift */; };
@@ -53,7 +58,6 @@
 		89D3A09326C864980001837A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89D3A09226C864980001837A /* Preview Assets.xcassets */; };
 		89D3A09C26C864C90001837A /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D3A09B26C864C90001837A /* Home.swift */; };
 		89DC37AD26D01B7200FC4E4E /* RemoveItemParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DC37AC26D01B7200FC4E4E /* RemoveItemParams.swift */; };
-		89E1746926D54E9500B875E5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 89E1746826D54E9500B875E5 /* Alamofire */; };
 		89E77C0826D4256D00835906 /* PetFeedingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E77C0726D4256D00835906 /* PetFeedingItem.swift */; };
 		89E9D10826CAA6580018CD68 /* ButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E9D10726CAA6580018CD68 /* ButtonLabel.swift */; };
 		89E9D10A26CAAFB10018CD68 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E9D10926CAAFB10018CD68 /* Config.swift */; };
@@ -94,6 +98,9 @@
 		890BB76826D65D9A00309118 /* CreateInviteSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateInviteSheet.swift; sourceTree = "<group>"; };
 		89104FA826D6C0150087CDE7 /* AcceptInviteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptInviteView.swift; sourceTree = "<group>"; };
 		89104FAA26D6C9170087CDE7 /* HowToAcceptInvite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToAcceptInvite.swift; sourceTree = "<group>"; };
+		8914570726E3B0260086EC87 /* PetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetView.swift; sourceTree = "<group>"; };
+		8914570926E3ED3B0086EC87 /* PetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetViewModel.swift; sourceTree = "<group>"; };
+		8914570B26E3EE340086EC87 /* PetOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetOwner.swift; sourceTree = "<group>"; };
 		891AEB4F26D5833F00EEAA05 /* Loulou's eten.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Loulou's eten.entitlements"; sourceTree = "<group>"; };
 		891AEB5026D5967C00EEAA05 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		891D846B26D2A407008E88E2 /* AdaptiveStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveStack.swift; sourceTree = "<group>"; };
@@ -113,6 +120,7 @@
 		895E995326DF6A31003ACDDB /* CreateInviteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateInviteViewModel.swift; sourceTree = "<group>"; };
 		89608E0D26CBB927004993F7 /* FeedingSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedingSheet.swift; sourceTree = "<group>"; };
 		89608E0F26CBBC2D004993F7 /* FeedingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedingViewModel.swift; sourceTree = "<group>"; };
+		8960A9F526FA363300369EEB /* ExtraNotesSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraNotesSheet.swift; sourceTree = "<group>"; };
 		897A432826D28E1000559819 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		897A432A26D28E2600559819 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		897A432C26D2952B00559819 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
@@ -159,7 +167,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89E1746926D54E9500B875E5 /* Alamofire in Frameworks */,
+				893273F726F3ADCA00D59C7A /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +191,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8914570426E3AE330086EC87 /* Pets */ = {
+			isa = PBXGroup;
+			children = (
+				8960A9F426FA362300369EEB /* PetView */,
+				893EE91926DA832B002746F0 /* CreatePetView.swift */,
+				891D847726D2D0BE008E88E2 /* ManagePets.swift */,
+				8914570726E3B0260086EC87 /* PetView.swift */,
+			);
+			path = Pets;
+			sourceTree = "<group>";
+		};
 		891D846D26D2AC4F008E88E2 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,9 +216,8 @@
 		891D847626D2D0A9008E88E2 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				8914570426E3AE330086EC87 /* Pets */,
 				89E9D12226CB16EB0018CD68 /* SettingsView.swift */,
-				893EE91926DA832B002746F0 /* CreatePetView.swift */,
-				891D847726D2D0BE008E88E2 /* ManagePets.swift */,
 				89B9D23B26D4F7A700546D1D /* Invite */,
 			);
 			path = Settings;
@@ -211,6 +229,7 @@
 				894CCAE826DABA2D0029A5DB /* CreatePetViewModel.swift */,
 				891D847A26D2D0DE008E88E2 /* ManagePetsViewModel.swift */,
 				89B9D23E26D4F89B00546D1D /* Invite */,
+				8914570926E3ED3B0086EC87 /* PetViewModel.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -274,6 +293,14 @@
 			path = Icons;
 			sourceTree = "<group>";
 		};
+		8960A9F426FA362300369EEB /* PetView */ = {
+			isa = PBXGroup;
+			children = (
+				8960A9F526FA363300369EEB /* ExtraNotesSheet.swift */,
+			);
+			path = PetView;
+			sourceTree = "<group>";
+		};
 		89B9D23B26D4F7A700546D1D /* Invite */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +329,7 @@
 				897A432C26D2952B00559819 /* Pet.swift */,
 				890A4AC626D29F260092E8EE /* PetStatus.swift */,
 				89C692AE26E277FC007C9C43 /* PetProfile.swift */,
+				8914570B26E3EE340086EC87 /* PetOwner.swift */,
 			);
 			path = Pet;
 			sourceTree = "<group>";
@@ -408,7 +436,7 @@
 			);
 			name = "Loulou's eten";
 			packageProductDependencies = (
-				89E1746826D54E9500B875E5 /* Alamofire */,
+				893273F626F3ADCA00D59C7A /* Alamofire */,
 			);
 			productName = "Loulou's eten";
 			productReference = 89D3A08826C864960001837A /* Loulou's eten.app */;
@@ -439,7 +467,7 @@
 			);
 			mainGroup = 89D3A07F26C864950001837A;
 			packageReferences = (
-				89E1746726D54E9400B875E5 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				893273F526F3ADCA00D59C7A /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 89D3A08926C864960001837A /* Products */;
 			projectDirPath = "";
@@ -492,9 +520,12 @@
 				89104FA926D6C0150087CDE7 /* AcceptInviteView.swift in Sources */,
 				89264BEF26CD549500DC1EA3 /* ButtonState.swift in Sources */,
 				890BB76926D65D9B00309118 /* CreateInviteSheet.swift in Sources */,
+				8914570826E3B0260086EC87 /* PetView.swift in Sources */,
 				89E9D11A26CAF2360018CD68 /* HomeSheet.swift in Sources */,
+				8960A9F626FA363300369EEB /* ExtraNotesSheet.swift in Sources */,
 				89608E1026CBBC2D004993F7 /* FeedingViewModel.swift in Sources */,
 				8905427B26D59E0E0025CB12 /* SIWAResponse.swift in Sources */,
+				8914570A26E3ED3B0086EC87 /* PetViewModel.swift in Sources */,
 				89E9D12326CB16EB0018CD68 /* SettingsView.swift in Sources */,
 				89D3A09C26C864C90001837A /* Home.swift in Sources */,
 				89E9D11226CAC0AC0018CD68 /* FeedingHistoryViewModel.swift in Sources */,
@@ -507,6 +538,7 @@
 				89B9D24826D4FFC600546D1D /* InviteViewModel.swift in Sources */,
 				89E9D10E26CAC0230018CD68 /* FeedingHistory.swift in Sources */,
 				891AEB5126D5967C00EEAA05 /* LoginViewModel.swift in Sources */,
+				8914570C26E3EE340086EC87 /* PetOwner.swift in Sources */,
 				89E9D10A26CAAFB10018CD68 /* Config.swift in Sources */,
 				89FD01C626C8656400D2C6D2 /* LoulousEten.swift in Sources */,
 				891D846C26D2A407008E88E2 /* AdaptiveStack.swift in Sources */,
@@ -752,20 +784,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		89E1746726D54E9400B875E5 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		893273F526F3ADCA00D59C7A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
-				branch = xcode13;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		89E1746826D54E9500B875E5 /* Alamofire */ = {
+		893273F626F3ADCA00D59C7A /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 89E1746726D54E9400B875E5 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 893273F526F3ADCA00D59C7A /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
