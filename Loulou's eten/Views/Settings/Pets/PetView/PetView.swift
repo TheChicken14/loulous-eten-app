@@ -12,10 +12,39 @@ struct PetView: View {
     
     @StateObject var viewModel = PetViewModel()
     
+    var avatarEditButton: some View {
+        Button {
+            viewModel.showSheet(.imagePicker)
+        } label: {
+            ZStack {
+                if viewModel.uploading {
+                    ProgressView()
+                } else {
+                    Label("edit", systemImage: "pencil")
+                        .labelStyle(.iconOnly)
+                }
+            }
+            .font(Font.system(size: 25))
+            .frame(width: 125, height: 125)
+            .background(.ultraThinMaterial)
+            .clipShape(Circle())
+        }.buttonStyle(.plain)
+    }
+    
     var body: some View {
         ZStack {
             if !viewModel.loading {
                 Form {
+                    
+                    HStack {
+                        Spacer()
+                        PetAvatar(pet: viewModel.pet)
+                            .overlay(
+                                viewModel.editing ? avatarEditButton : nil
+                            )
+                        Spacer()
+                    }
+                    
                     EditItem(
                         label: "general.name",
                         systemImage: "circle.dashed.inset.fill",
@@ -54,7 +83,7 @@ struct PetView: View {
                     )
                     
                     Button {
-                        viewModel.extraNotesSheet = true
+                        viewModel.showSheet(.extraNotes)
                     } label: {
                         Label("createPet.extraNotes", systemImage: "text.bubble.fill")
                             .font(Font.body.bold())
@@ -97,11 +126,17 @@ struct PetView: View {
                 }
             }
         }
-        .sheet(isPresented: $viewModel.extraNotesSheet) {
-            ExtraNotesSheet(extraNotes: $viewModel.extraNotes, editing: viewModel.editing)
+        .sheet(isPresented: $viewModel.sheetShown) {
+            switch viewModel.whichSheet {
+            case .extraNotes:
+                ExtraNotesSheet(extraNotes: $viewModel.extraNotes, editing: viewModel.editing)
+            case .imagePicker:
+                ImagePicker(image: $viewModel.selectedImage)
+            }
         }
     }
 }
+
 
 struct EditItem: View {
     let label: LocalizedStringKey

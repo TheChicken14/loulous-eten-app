@@ -9,6 +9,11 @@ import Foundation
 import Alamofire
 import UIKit
 
+enum PetViewSheet {
+    case extraNotes
+    case imagePicker
+}
+
 final class PetViewModel: ObservableObject {
     @Published var loading: Bool = true
     @Published var savingState: ButtonState = .normal
@@ -24,7 +29,16 @@ final class PetViewModel: ObservableObject {
     @Published var dinnerFood: String = ""
     @Published var extraNotes: String = ""
     
-    @Published var extraNotesSheet: Bool = false
+    @Published var selectedImage: UIImage = UIImage(systemName: "photo")! {
+        didSet {
+            print("selectedImage set")
+            upload()
+        }
+    }
+    @Published var uploading: Bool = false
+    
+    @Published var sheetShown: Bool = false
+    @Published var whichSheet: PetViewSheet = .extraNotes
     
     func load(petID: Int) {
         API.request("\(Config.API_URL)/pet/profile/\(petID)").validate().responseDecodable(of: Pet.self) { response in
@@ -74,11 +88,29 @@ final class PetViewModel: ObservableObject {
                     self.savingState = .success
                 case .failure(let err):
                     print(err)
-//                    self.savingState = .
                 }
                 
                 self.doneSaving()
         }
+    }
+    
+    func upload() {
+        guard let imgData = selectedImage.jpegData(compressionQuality: 1), let pet = pet else {
+            print("no imgdata/pet")
+            return
+        }
+        
+        API.upload(multipartFormData: { multipartFormData in
+            multipartFormData.append(imgData, withName: "picture", fileName: "picture.jpg", mimeType: "image/jpeg")
+        }, to: "\(Config.API_URL)/pet/upload/photo/\(pet.id)")
+            .uploadProgress { progress in
+                print("Progress: \(progress)")
+            }
+            .response { _ in
+                self.haptic()
+                self.load(petID: pet.id)
+                self.editing = false
+            }
     }
     
     func doneSaving() {
@@ -92,5 +124,15 @@ final class PetViewModel: ObservableObject {
     func haptic() {
         let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(.success)
+    }
+    
+    func showSheet(_ sheet: PetViewSheet) {
+        self.whichSheet = sheet
+        self.sheetShown = true
+    }
+    func onDismiss() {
+        if self.whichSheet == .imagePicker {
+            self.upload()
+        }
     }
 }

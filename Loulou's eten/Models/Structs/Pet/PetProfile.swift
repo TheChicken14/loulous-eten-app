@@ -11,7 +11,7 @@ struct PetProfile: Codable {
     let id: Int
     let petId: Int
     
-    let picturePath: String?
+    let pictureName: String?
     let birthday: String?
     var birthdayDate: Date? {
         guard let date = birthday else { return nil }
