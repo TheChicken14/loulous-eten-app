@@ -103,16 +103,6 @@ struct Home: View {
                     }
                 }
                 .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink(destination: SettingsView()) {
-                            Label("settings", systemImage: "gear")
-                                .foregroundColor(
-                                    colorScheme == ColorScheme.dark
-                                    ? .white
-                                    : .black
-                                )
-                        }
-                    }
                     ToolbarItem(placement: .navigationBarLeading) {
                         if !viewModel.loading {
                             Menu {

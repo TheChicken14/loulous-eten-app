@@ -22,6 +22,11 @@ struct MainView: View {
                 .tabItem {
                     Label("general.feedingHistory", systemImage: "clock")
                 }
+            
+            SettingsView()
+                .tabItem {
+                    Label("settings", systemImage: "gear")
+                }
         }.navigationViewStyle(.stack)
             .fullScreenCover(isPresented: $viewModel.showLoginView, content: {
                 LoginScreen(isLoggedIn: $viewModel.isLoggedIn)
