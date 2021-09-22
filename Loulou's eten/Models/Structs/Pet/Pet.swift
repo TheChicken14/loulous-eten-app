@@ -7,7 +7,10 @@
 
 import Foundation
 
-struct Pet: Codable, Hashable {
+struct Pet: Codable {
     let name: String
     let id: Int
+    
+    var profile: PetProfile?
+    var owners: [PetOwner]?
 }
