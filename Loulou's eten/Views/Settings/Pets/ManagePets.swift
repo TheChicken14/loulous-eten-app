@@ -14,8 +14,12 @@ struct ManagePets: View {
     var body: some View {
         List {
             ForEach(viewModel.pets, id: \.id) { pet in
-                Text(pet.name)
-                    .bold()
+                NavigationLink {
+                    PetView(pet: pet)
+                } label: {
+                    Text(pet.name)
+                        .bold()
+                }
             }.onDelete(perform: viewModel.delete)
             
         }.navigationTitle("settings.pets")
