@@ -10,12 +10,6 @@ import Alamofire
 
 final class RequestInterceptor: Alamofire.RequestInterceptor {
 
-//    private let storage: AccessTokenStorage
-//
-//    init(storage: AccessTokenStorage) {
-//        self.storage = storage
-//    }
-
     func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
         guard urlRequest.url?.absoluteString.hasPrefix(Config.API_URL) == true else {
             /// If the request does not require authentication, we can directly return it as unmodified.
@@ -23,7 +17,12 @@ final class RequestInterceptor: Alamofire.RequestInterceptor {
         }
         var urlRequest = urlRequest
 
-        let token = UserDefaults.standard.string(forKey: "token") ?? ""
+        var token = UserDefaults.standard.string(forKey: "token") ?? ""
+        
+        #if targetEnvironment(simulator)
+            token = Config.SIMULATOR_KEY
+        #endif
+        
         /// Set the Authorization header value using the access token.
         urlRequest.setValue(token, forHTTPHeaderField: "authorization")
 
