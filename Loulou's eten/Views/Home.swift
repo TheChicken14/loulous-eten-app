@@ -100,6 +100,12 @@ struct Home: View {
                             message: Text("alert.noConnection.message"),
                             dismissButton: .cancel(Text("general.ok"))
                         )
+                    case .noPermission:
+                        return Alert(
+                            title: Text("alert.noPermission.title"),
+                            message: Text("alert.noPermission.message"),
+                            dismissButton: .default(Text("general.ok"))
+                        )
                     }
                 }
                 .toolbar {
