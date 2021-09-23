@@ -24,6 +24,13 @@ struct SettingsView: View {
                     Label("settings.invites", systemImage: "person.crop.circle.fill.badge.plus")
                         .font(Font.body.bold())
                 }
+                
+                NavigationLink {
+                    ManageQRCodesView()
+                } label: {
+                    Label("qrcodes", systemImage: "qrcode")
+                        .font(Font.body.bold())
+                }
             }.navigationTitle("settings")
         }
     }
