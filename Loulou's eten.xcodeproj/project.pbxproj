@@ -52,6 +52,13 @@
 		89B9D24426D4FD3B00546D1D /* InviteItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B9D24326D4FD3B00546D1D /* InviteItemView.swift */; };
 		89B9D24626D4FF8400546D1D /* InviteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B9D24526D4FF8400546D1D /* InviteView.swift */; };
 		89B9D24826D4FFC600546D1D /* InviteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B9D24726D4FFC600546D1D /* InviteViewModel.swift */; };
+		89BC20CC26FCD6FB009130AD /* ManageQRCodesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC20CB26FCD6FB009130AD /* ManageQRCodesView.swift */; };
+		89BC20D126FCE77A009130AD /* ManageQRCodesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC20D026FCE77A009130AD /* ManageQRCodesViewModel.swift */; };
+		89BC20D426FCE79C009130AD /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC20D326FCE79C009130AD /* QRCode.swift */; };
+		89BC20D626FCE7CE009130AD /* QRCodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC20D526FCE7CE009130AD /* QRCodeType.swift */; };
+		89BC20D826FCE91F009130AD /* CreateQRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC20D726FCE91F009130AD /* CreateQRCodeView.swift */; };
+		89BC20DA26FCE9B3009130AD /* CreateQRCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC20D926FCE9B3009130AD /* CreateQRCodeViewModel.swift */; };
+		89BC20DE26FD1139009130AD /* QRCodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC20DD26FD1139009130AD /* QRCodeManager.swift */; };
 		89C692AF26E277FC007C9C43 /* PetProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C692AE26E277FC007C9C43 /* PetProfile.swift */; };
 		89CB990326CBD4AB00AB5EE1 /* HomeAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CB990226CBD4AB00AB5EE1 /* HomeAlert.swift */; };
 		89CDAEA326D1AB9F00A4F612 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CDAEA226D1AB9F00A4F612 /* LoginScreen.swift */; };
@@ -139,6 +146,13 @@
 		89B9D24326D4FD3B00546D1D /* InviteItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteItemView.swift; sourceTree = "<group>"; };
 		89B9D24526D4FF8400546D1D /* InviteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteView.swift; sourceTree = "<group>"; };
 		89B9D24726D4FFC600546D1D /* InviteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteViewModel.swift; sourceTree = "<group>"; };
+		89BC20CB26FCD6FB009130AD /* ManageQRCodesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageQRCodesView.swift; sourceTree = "<group>"; };
+		89BC20D026FCE77A009130AD /* ManageQRCodesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageQRCodesViewModel.swift; sourceTree = "<group>"; };
+		89BC20D326FCE79C009130AD /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
+		89BC20D526FCE7CE009130AD /* QRCodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeType.swift; sourceTree = "<group>"; };
+		89BC20D726FCE91F009130AD /* CreateQRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQRCodeView.swift; sourceTree = "<group>"; };
+		89BC20D926FCE9B3009130AD /* CreateQRCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQRCodeViewModel.swift; sourceTree = "<group>"; };
+		89BC20DD26FD1139009130AD /* QRCodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeManager.swift; sourceTree = "<group>"; };
 		89C692AE26E277FC007C9C43 /* PetProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfile.swift; sourceTree = "<group>"; };
 		89CB990226CBD4AB00AB5EE1 /* HomeAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAlert.swift; sourceTree = "<group>"; };
 		89CDAEA226D1AB9F00A4F612 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
@@ -220,8 +234,9 @@
 			isa = PBXGroup;
 			children = (
 				8914570426E3AE330086EC87 /* Pets */,
-				89E9D12226CB16EB0018CD68 /* SettingsView.swift */,
 				89B9D23B26D4F7A700546D1D /* Invite */,
+				89BC20CA26FCD6E1009130AD /* QRCodes */,
+				89E9D12226CB16EB0018CD68 /* SettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -229,10 +244,9 @@
 		891D847926D2D0D1008E88E2 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				894CCAE826DABA2D0029A5DB /* CreatePetViewModel.swift */,
-				891D847A26D2D0DE008E88E2 /* ManagePetsViewModel.swift */,
+				89BC20CF26FCE76B009130AD /* QRCode */,
+				89BC20CE26FCE763009130AD /* Pets */,
 				89B9D23E26D4F89B00546D1D /* Invite */,
-				8914570926E3ED3B0086EC87 /* PetViewModel.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -251,6 +265,7 @@
 		89264BF126CDA75300DC1EA3 /* Structs */ = {
 			isa = PBXGroup;
 			children = (
+				89BC20D226FCE78D009130AD /* QRCodes */,
 				8905427926D59DFE0025CB12 /* SIWA */,
 				89C692B026E27803007C9C43 /* Pet */,
 				89FD01CA26C86C9900D2C6D2 /* HasFoodResponse.swift */,
@@ -327,6 +342,44 @@
 				895E995326DF6A31003ACDDB /* CreateInviteViewModel.swift */,
 			);
 			path = Invite;
+			sourceTree = "<group>";
+		};
+		89BC20CA26FCD6E1009130AD /* QRCodes */ = {
+			isa = PBXGroup;
+			children = (
+				89BC20CB26FCD6FB009130AD /* ManageQRCodesView.swift */,
+				89BC20D726FCE91F009130AD /* CreateQRCodeView.swift */,
+			);
+			path = QRCodes;
+			sourceTree = "<group>";
+		};
+		89BC20CE26FCE763009130AD /* Pets */ = {
+			isa = PBXGroup;
+			children = (
+				894CCAE826DABA2D0029A5DB /* CreatePetViewModel.swift */,
+				891D847A26D2D0DE008E88E2 /* ManagePetsViewModel.swift */,
+				8914570926E3ED3B0086EC87 /* PetViewModel.swift */,
+			);
+			path = Pets;
+			sourceTree = "<group>";
+		};
+		89BC20CF26FCE76B009130AD /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				89BC20D026FCE77A009130AD /* ManageQRCodesViewModel.swift */,
+				89BC20D926FCE9B3009130AD /* CreateQRCodeViewModel.swift */,
+			);
+			path = QRCode;
+			sourceTree = "<group>";
+		};
+		89BC20D226FCE78D009130AD /* QRCodes */ = {
+			isa = PBXGroup;
+			children = (
+				89BC20D326FCE79C009130AD /* QRCode.swift */,
+				89BC20D526FCE7CE009130AD /* QRCodeType.swift */,
+				89BC20DD26FD1139009130AD /* QRCodeManager.swift */,
+			);
+			path = QRCodes;
 			sourceTree = "<group>";
 		};
 		89C692B026E27803007C9C43 /* Pet */ = {
@@ -511,12 +564,14 @@
 				89B9D24026D4F8A900546D1D /* ManageInvitesViewModel.swift in Sources */,
 				8905427826D59B270025CB12 /* SIWAParams.swift in Sources */,
 				89DC37AD26D01B7200FC4E4E /* RemoveItemParams.swift in Sources */,
+				89BC20D426FCE79C009130AD /* QRCode.swift in Sources */,
 				895E995426DF6A31003ACDDB /* CreateInviteViewModel.swift in Sources */,
 				89B9D24626D4FF8400546D1D /* InviteView.swift in Sources */,
 				897A433126D2958E00559819 /* FoodItem.swift in Sources */,
 				89B9D24226D4F8C300546D1D /* InviteItem.swift in Sources */,
 				89E9D10826CAA6580018CD68 /* ButtonLabel.swift in Sources */,
 				89CDAEA326D1AB9F00A4F612 /* LoginScreen.swift in Sources */,
+				89BC20CC26FCD6FB009130AD /* ManageQRCodesView.swift in Sources */,
 				89E9D11C26CAF33E0018CD68 /* WelcomeSheet.swift in Sources */,
 				897A432F26D2955F00559819 /* UserInfo.swift in Sources */,
 				89608E0E26CBB927004993F7 /* FeedingSheet.swift in Sources */,
@@ -544,17 +599,21 @@
 				897A432B26D28E2600559819 /* MainViewModel.swift in Sources */,
 				89B9D24826D4FFC600546D1D /* InviteViewModel.swift in Sources */,
 				89E9D10E26CAC0230018CD68 /* FeedingHistory.swift in Sources */,
+				89BC20D826FCE91F009130AD /* CreateQRCodeView.swift in Sources */,
 				891AEB5126D5967C00EEAA05 /* LoginViewModel.swift in Sources */,
 				8914570C26E3EE340086EC87 /* PetOwner.swift in Sources */,
 				89E9D10A26CAAFB10018CD68 /* Config.swift in Sources */,
 				89FD01C626C8656400D2C6D2 /* LoulousEten.swift in Sources */,
 				891D846C26D2A407008E88E2 /* AdaptiveStack.swift in Sources */,
 				890A4AC726D29F270092E8EE /* PetStatus.swift in Sources */,
+				89BC20DE26FD1139009130AD /* QRCodeManager.swift in Sources */,
 				897A432D26D2952B00559819 /* Pet.swift in Sources */,
 				893EE91A26DA832B002746F0 /* CreatePetView.swift in Sources */,
 				89FD01C826C865C400D2C6D2 /* HomeViewModel.swift in Sources */,
 				898ACBC626FB7A8500D8F6DF /* ImagePicker.swift in Sources */,
 				89FD01CB26C86C9900D2C6D2 /* HasFoodResponse.swift in Sources */,
+				89BC20DA26FCE9B3009130AD /* CreateQRCodeViewModel.swift in Sources */,
+				89BC20D126FCE77A009130AD /* ManageQRCodesViewModel.swift in Sources */,
 				89B9D24426D4FD3B00546D1D /* InviteItemView.swift in Sources */,
 				891D847526D2AEB0008E88E2 /* CreatePetParams.swift in Sources */,
 				89E77C0826D4256D00835906 /* PetFeedingItem.swift in Sources */,
@@ -562,6 +621,7 @@
 				89E9D12126CB10FB0018CD68 /* API.swift in Sources */,
 				891D847826D2D0BE008E88E2 /* ManagePets.swift in Sources */,
 				89E9D11826CAF12C0018CD68 /* RequestParameters.swift in Sources */,
+				89BC20D626FCE7CE009130AD /* QRCodeType.swift in Sources */,
 				89E9D12726CB1C1A0018CD68 /* GradientBackground.swift in Sources */,
 				890A4AC526D29CDC0092E8EE /* HasFoodView.swift in Sources */,
 				891D846F26D2AC6C008E88E2 /* AddFirstPetView.swift in Sources */,
