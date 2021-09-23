@@ -10,4 +10,5 @@ import Foundation
 enum HomeAlert {
     case alreadyFed
     case connectionError
+    case noPermission
 }

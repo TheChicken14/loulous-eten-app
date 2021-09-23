@@ -182,19 +182,47 @@ class HomeViewModel: ObservableObject {
             }
             
             if isFeed {
-                API.request("\(Config.API_URL)/loulou/hasFood").validate().responseDecodable(of: HasFoodResponse.self) { response in
+                if url.path.isEmpty {
+                    return;
+                }
+                var petID = url.path
+                petID.remove(at: petID.startIndex)
+                print(url.path)
+                
+                API.request("\(Config.API_URL)/pet/status/\(petID)").validate().responseDecodable(of: PetStatus.self) { response in
                     switch response.result {
                     case .success(let res):
-                        if res.food == false {
-                            self.showSheet(sheet: .feedingSheet)
-                        } else {
+                        let hour = Calendar.current.component(.hour, from: Date())
+                        let isEvening = hour > 15
+                        
+                        if isEvening && res.evening != nil {
+                            // already fed
                             self.showAlert(alert: .alreadyFed)
+                        } else if !isEvening && res.morning != nil {
+                            // already fed
+                            self.showAlert(alert: .alreadyFed)
+                        } else {
+                            // show feeding sheet
+                            guard let petIDInt = Int(petID) else {
+                                return
+                            }
+                            
+                            if let petIndex = self.pets.firstIndex(where: { $0.id == petIDInt}) {
+                                self.selectedPetIndex = petIndex
+                                self.showSheet(sheet: .feedingSheet)
+                            }
                         }
+                        
                         
                     case .failure(let error):
                         print("error")
                         print(error)
-                        self.showAlert(alert: .connectionError)
+                        
+                        if error.responseCode == 401 || error.responseCode == 404 {
+                            self.showAlert(alert: .noPermission)
+                        } else {
+                            self.showAlert(alert: .connectionError)
+                        }
                     }
                 }
             }
