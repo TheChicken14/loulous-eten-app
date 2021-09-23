@@ -84,6 +84,9 @@
 "alert.areYouSure.message" = "Weet je zeker dat je dit huisdier wilt verwijderen? Je kunt dit niet ongedaan maken!";
 "alert.areYouSure.yes" = "Ja";
 
+"alert.noPermission.title" = "Geen toegang";
+"alert.noPermission.message" = "Je hebt geen toegang tot dit huisdier. Vraag de eigenaar je uit te nodigen om dit huisdier eten te geven.";
+
 // MARK: Settings
 
 "settings" = "Instellingen";
@@ -156,3 +159,11 @@
 "createPet.eveningFood" = "Avondeten";
 
 "createPet.extraNotes" = "Extra notities";
+
+// MARK: QR Codes
+
+"qrcodes" = "QR Codes";
+"qrcodes.explanation" = "Met een QR Code kan je gemakkelijk het eten van je huisdier bijhouden door de code met je telefoon te scannen.\nHier kun je deze codes aanmaken/verwijderen.";
+
+"qrcode.create" = "QR Code aanmaken";
+"qrcode.create.explanation" = "Hier kun je een QR Code aanmaken. Als je deze QR Code scant, kun je meteen het eten van je huisdier registreren.";
