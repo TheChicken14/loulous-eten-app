@@ -22,13 +22,13 @@ final class CreateQRCodeViewModel: ObservableObject {
     
     var viewDismissalModePublisher = PassthroughSubject<Bool, Never>()
 
-    
     func load() {
         API.request("\(Config.API_URL)/user/info").validate().responseDecodable(of: UserInfo.self) { response in
             self.loading = false
             switch response.result {
             case .success(let userInfo):
                 self.pets = userInfo.pets
+                self.selectedPet = userInfo.pets.first
                 
             case .failure(let error):
                 print(error)
@@ -41,14 +41,16 @@ final class CreateQRCodeViewModel: ObservableObject {
             return
         }
 
-        let qr = QRCode(petID: selectedPet.id, type: .feeding)
+        let qr = QRCode(petId: selectedPet.id, pet: selectedPet, type: .feeding, id: nil)
         
-        QRCodeManager.addQRCode(qr)
+        self.savingState = .loading
         
-        self.savingState = .success
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.viewDismissalModePublisher.send(true)
+        QRCodeAPI.addQRCode(qr).validate().response { _ in
+            self.savingState = .success
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.viewDismissalModePublisher.send(true)
+            }
         }
     }
 }
