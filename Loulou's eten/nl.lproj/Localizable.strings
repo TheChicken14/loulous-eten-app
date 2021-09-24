@@ -163,7 +163,10 @@
 // MARK: QR Codes
 
 "qrcodes" = "QR Codes";
-"qrcodes.explanation" = "Met een QR Code kan je gemakkelijk het eten van je huisdier bijhouden door de code met je telefoon te scannen.\nHier kun je deze codes aanmaken/verwijderen.";
+"qrcodes.explanation" = "Met een QR Code kan je gemakkelijk het eten van je huisdier bijhouden door de code met je telefoon te scannen.\nDie QR Code zou je bijvoorbeeld kunnen uitprinten en bij het voerbakje ophangen.\nHier kun je deze codes aanmaken/verwijderen.";
 
 "qrcode.create" = "QR Code aanmaken";
 "qrcode.create.explanation" = "Hier kun je een QR Code aanmaken. Als je deze QR Code scant, kun je meteen het eten van je huisdier registreren.";
+
+"qrcode" = "QR Code";
+"qrcode.share" = "Delen";
