@@ -16,7 +16,11 @@ struct ManageQRCodesView: View {
             explanation
             
             ForEach(viewModel.QRCodes, id: \.id) { qrcode in
-                Text(String(qrcode.petID))
+                NavigationLink {
+                    QRCodeView(qrId: qrcode.id!)
+                } label: {
+                    listItem(qrcode)
+                }
             }
         }.navigationTitle("qrcodes")
             .sheet(isPresented: $viewModel.sheetShown) {
@@ -38,6 +42,19 @@ struct ManageQRCodesView: View {
             .fixedSize(horizontal: false, vertical: true)
             .font(.subheadline)
             .padding(.vertical)
+    }
+    
+    func listItem(_ qrcode: QRCode) -> some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text("\(qrcode.pet.name)'s QR code")
+                .bold()
+//                .padding(.vertical, 5)
+            
+            if let date = qrcode.createdAtDate {
+                Text("Aangemaakt op \(date, style: .date)")
+                    .font(.footnote)
+            }
+        }
     }
 }
 
