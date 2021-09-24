@@ -37,6 +37,9 @@
 		89608E0E26CBB927004993F7 /* FeedingSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89608E0D26CBB927004993F7 /* FeedingSheet.swift */; };
 		89608E1026CBBC2D004993F7 /* FeedingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89608E0F26CBBC2D004993F7 /* FeedingViewModel.swift */; };
 		8960A9F626FA363300369EEB /* ExtraNotesSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8960A9F526FA363300369EEB /* ExtraNotesSheet.swift */; };
+		8965456326FDCE39000250AF /* QRCodeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8965456226FDCE39000250AF /* QRCodeAPI.swift */; };
+		8965456526FDD18C000250AF /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8965456426FDD18C000250AF /* QRCodeView.swift */; };
+		8965456826FDD4A2000250AF /* QRCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8965456726FDD4A2000250AF /* QRCodeViewModel.swift */; };
 		897A432926D28E1000559819 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897A432826D28E1000559819 /* MainView.swift */; };
 		897A432B26D28E2600559819 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897A432A26D28E2600559819 /* MainViewModel.swift */; };
 		897A432D26D2952B00559819 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897A432C26D2952B00559819 /* Pet.swift */; };
@@ -58,7 +61,6 @@
 		89BC20D626FCE7CE009130AD /* QRCodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC20D526FCE7CE009130AD /* QRCodeType.swift */; };
 		89BC20D826FCE91F009130AD /* CreateQRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC20D726FCE91F009130AD /* CreateQRCodeView.swift */; };
 		89BC20DA26FCE9B3009130AD /* CreateQRCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC20D926FCE9B3009130AD /* CreateQRCodeViewModel.swift */; };
-		89BC20DE26FD1139009130AD /* QRCodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC20DD26FD1139009130AD /* QRCodeManager.swift */; };
 		89C692AF26E277FC007C9C43 /* PetProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C692AE26E277FC007C9C43 /* PetProfile.swift */; };
 		89CB990326CBD4AB00AB5EE1 /* HomeAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CB990226CBD4AB00AB5EE1 /* HomeAlert.swift */; };
 		89CDAEA326D1AB9F00A4F612 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CDAEA226D1AB9F00A4F612 /* LoginScreen.swift */; };
@@ -74,7 +76,7 @@
 		89E9D11226CAC0AC0018CD68 /* FeedingHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E9D11126CAC0AC0018CD68 /* FeedingHistoryViewModel.swift */; };
 		89E9D11426CAC0CF0018CD68 /* HistoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E9D11326CAC0CF0018CD68 /* HistoryResponse.swift */; };
 		89E9D11626CAC5390018CD68 /* FeedingHistoryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E9D11526CAC5390018CD68 /* FeedingHistoryItemView.swift */; };
-		89E9D11826CAF12C0018CD68 /* RequestParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E9D11726CAF12C0018CD68 /* RequestParameters.swift */; };
+		89E9D11826CAF12C0018CD68 /* FeedingRequestParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E9D11726CAF12C0018CD68 /* FeedingRequestParams.swift */; };
 		89E9D11A26CAF2360018CD68 /* HomeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E9D11926CAF2360018CD68 /* HomeSheet.swift */; };
 		89E9D11C26CAF33E0018CD68 /* WelcomeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E9D11B26CAF33E0018CD68 /* WelcomeSheet.swift */; };
 		89E9D12126CB10FB0018CD68 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E9D12026CB10FB0018CD68 /* API.swift */; };
@@ -130,6 +132,9 @@
 		89608E0D26CBB927004993F7 /* FeedingSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedingSheet.swift; sourceTree = "<group>"; };
 		89608E0F26CBBC2D004993F7 /* FeedingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedingViewModel.swift; sourceTree = "<group>"; };
 		8960A9F526FA363300369EEB /* ExtraNotesSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraNotesSheet.swift; sourceTree = "<group>"; };
+		8965456226FDCE39000250AF /* QRCodeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeAPI.swift; sourceTree = "<group>"; };
+		8965456426FDD18C000250AF /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
+		8965456726FDD4A2000250AF /* QRCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewModel.swift; sourceTree = "<group>"; };
 		897A432826D28E1000559819 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		897A432A26D28E2600559819 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		897A432C26D2952B00559819 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
@@ -152,7 +157,6 @@
 		89BC20D526FCE7CE009130AD /* QRCodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeType.swift; sourceTree = "<group>"; };
 		89BC20D726FCE91F009130AD /* CreateQRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQRCodeView.swift; sourceTree = "<group>"; };
 		89BC20D926FCE9B3009130AD /* CreateQRCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQRCodeViewModel.swift; sourceTree = "<group>"; };
-		89BC20DD26FD1139009130AD /* QRCodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeManager.swift; sourceTree = "<group>"; };
 		89C692AE26E277FC007C9C43 /* PetProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfile.swift; sourceTree = "<group>"; };
 		89CB990226CBD4AB00AB5EE1 /* HomeAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAlert.swift; sourceTree = "<group>"; };
 		89CDAEA226D1AB9F00A4F612 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
@@ -169,7 +173,7 @@
 		89E9D11126CAC0AC0018CD68 /* FeedingHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedingHistoryViewModel.swift; sourceTree = "<group>"; };
 		89E9D11326CAC0CF0018CD68 /* HistoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryResponse.swift; sourceTree = "<group>"; };
 		89E9D11526CAC5390018CD68 /* FeedingHistoryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedingHistoryItemView.swift; sourceTree = "<group>"; };
-		89E9D11726CAF12C0018CD68 /* RequestParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParameters.swift; sourceTree = "<group>"; };
+		89E9D11726CAF12C0018CD68 /* FeedingRequestParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedingRequestParams.swift; sourceTree = "<group>"; };
 		89E9D11926CAF2360018CD68 /* HomeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSheet.swift; sourceTree = "<group>"; };
 		89E9D11B26CAF33E0018CD68 /* WelcomeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeSheet.swift; sourceTree = "<group>"; };
 		89E9D12026CB10FB0018CD68 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -265,16 +269,11 @@
 		89264BF126CDA75300DC1EA3 /* Structs */ = {
 			isa = PBXGroup;
 			children = (
+				8965456626FDD477000250AF /* Old */,
 				89BC20D226FCE78D009130AD /* QRCodes */,
 				8905427926D59DFE0025CB12 /* SIWA */,
 				89C692B026E27803007C9C43 /* Pet */,
-				89FD01CA26C86C9900D2C6D2 /* HasFoodResponse.swift */,
-				89E9D11326CAC0CF0018CD68 /* HistoryResponse.swift */,
-				89E9D11726CAF12C0018CD68 /* RequestParameters.swift */,
-				89DC37AC26D01B7200FC4E4E /* RemoveItemParams.swift */,
-				89E77C0726D4256D00835906 /* PetFeedingItem.swift */,
 				897A432E26D2955F00559819 /* UserInfo.swift */,
-				897A433026D2958E00559819 /* FoodItem.swift */,
 				891D847426D2AEB0008E88E2 /* CreatePetParams.swift */,
 				89B9D24126D4F8C300546D1D /* InviteItem.swift */,
 			);
@@ -322,6 +321,15 @@
 			path = PetView;
 			sourceTree = "<group>";
 		};
+		8965456626FDD477000250AF /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				89FD01CA26C86C9900D2C6D2 /* HasFoodResponse.swift */,
+				89E9D11326CAC0CF0018CD68 /* HistoryResponse.swift */,
+			);
+			path = Old;
+			sourceTree = "<group>";
+		};
 		89B9D23B26D4F7A700546D1D /* Invite */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,6 +357,7 @@
 			children = (
 				89BC20CB26FCD6FB009130AD /* ManageQRCodesView.swift */,
 				89BC20D726FCE91F009130AD /* CreateQRCodeView.swift */,
+				8965456426FDD18C000250AF /* QRCodeView.swift */,
 			);
 			path = QRCodes;
 			sourceTree = "<group>";
@@ -368,6 +377,7 @@
 			children = (
 				89BC20D026FCE77A009130AD /* ManageQRCodesViewModel.swift */,
 				89BC20D926FCE9B3009130AD /* CreateQRCodeViewModel.swift */,
+				8965456726FDD4A2000250AF /* QRCodeViewModel.swift */,
 			);
 			path = QRCode;
 			sourceTree = "<group>";
@@ -376,8 +386,8 @@
 			isa = PBXGroup;
 			children = (
 				89BC20D326FCE79C009130AD /* QRCode.swift */,
+				8965456226FDCE39000250AF /* QRCodeAPI.swift */,
 				89BC20D526FCE7CE009130AD /* QRCodeType.swift */,
-				89BC20DD26FD1139009130AD /* QRCodeManager.swift */,
 			);
 			path = QRCodes;
 			sourceTree = "<group>";
@@ -385,10 +395,14 @@
 		89C692B026E27803007C9C43 /* Pet */ = {
 			isa = PBXGroup;
 			children = (
+				89DC37AC26D01B7200FC4E4E /* RemoveItemParams.swift */,
+				89E9D11726CAF12C0018CD68 /* FeedingRequestParams.swift */,
+				89E77C0726D4256D00835906 /* PetFeedingItem.swift */,
 				897A432C26D2952B00559819 /* Pet.swift */,
 				890A4AC626D29F260092E8EE /* PetStatus.swift */,
 				89C692AE26E277FC007C9C43 /* PetProfile.swift */,
 				8914570B26E3EE340086EC87 /* PetOwner.swift */,
+				897A433026D2958E00559819 /* FoodItem.swift */,
 			);
 			path = Pet;
 			sourceTree = "<group>";
@@ -569,8 +583,10 @@
 				89B9D24626D4FF8400546D1D /* InviteView.swift in Sources */,
 				897A433126D2958E00559819 /* FoodItem.swift in Sources */,
 				89B9D24226D4F8C300546D1D /* InviteItem.swift in Sources */,
+				8965456326FDCE39000250AF /* QRCodeAPI.swift in Sources */,
 				89E9D10826CAA6580018CD68 /* ButtonLabel.swift in Sources */,
 				89CDAEA326D1AB9F00A4F612 /* LoginScreen.swift in Sources */,
+				8965456826FDD4A2000250AF /* QRCodeViewModel.swift in Sources */,
 				89BC20CC26FCD6FB009130AD /* ManageQRCodesView.swift in Sources */,
 				89E9D11C26CAF33E0018CD68 /* WelcomeSheet.swift in Sources */,
 				897A432F26D2955F00559819 /* UserInfo.swift in Sources */,
@@ -606,10 +622,10 @@
 				89FD01C626C8656400D2C6D2 /* LoulousEten.swift in Sources */,
 				891D846C26D2A407008E88E2 /* AdaptiveStack.swift in Sources */,
 				890A4AC726D29F270092E8EE /* PetStatus.swift in Sources */,
-				89BC20DE26FD1139009130AD /* QRCodeManager.swift in Sources */,
 				897A432D26D2952B00559819 /* Pet.swift in Sources */,
 				893EE91A26DA832B002746F0 /* CreatePetView.swift in Sources */,
 				89FD01C826C865C400D2C6D2 /* HomeViewModel.swift in Sources */,
+				8965456526FDD18C000250AF /* QRCodeView.swift in Sources */,
 				898ACBC626FB7A8500D8F6DF /* ImagePicker.swift in Sources */,
 				89FD01CB26C86C9900D2C6D2 /* HasFoodResponse.swift in Sources */,
 				89BC20DA26FCE9B3009130AD /* CreateQRCodeViewModel.swift in Sources */,
@@ -620,7 +636,7 @@
 				891D847126D2AE20008E88E2 /* FirstPetDoneView.swift in Sources */,
 				89E9D12126CB10FB0018CD68 /* API.swift in Sources */,
 				891D847826D2D0BE008E88E2 /* ManagePets.swift in Sources */,
-				89E9D11826CAF12C0018CD68 /* RequestParameters.swift in Sources */,
+				89E9D11826CAF12C0018CD68 /* FeedingRequestParams.swift in Sources */,
 				89BC20D626FCE7CE009130AD /* QRCodeType.swift in Sources */,
 				89E9D12726CB1C1A0018CD68 /* GradientBackground.swift in Sources */,
 				890A4AC526D29CDC0092E8EE /* HasFoodView.swift in Sources */,
