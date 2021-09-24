@@ -39,8 +39,8 @@ class FeedingViewModel: ObservableObject {
     
     func feed(pet: Pet) {
         buttonState = .loading
-//        let params = RequestParameters(name: byName, date: date, type: feedingType.rawValue)
-        let params = RequestParameters(id: pet.id, date: date, type: feedingType.rawValue)
+//        let params = FeedingRequestParams(name: byName, date: date, type: feedingType.rawValue)
+        let params = FeedingRequestParams(id: pet.id, date: date, type: feedingType.rawValue)
         let encoder = URLEncodedFormParameterEncoder(encoder: URLEncodedFormEncoder(dateEncoding: .iso8601))
         
         API.request(
