@@ -31,6 +31,14 @@ struct SettingsView: View {
                     Label("qrcodes", systemImage: "qrcode")
                         .font(Font.body.bold())
                 }
+                
+                NavigationLink {
+                    AboutView()
+                } label: {
+                    Label("aboutThisApp", systemImage: "info.circle")
+                        .font(Font.body.bold())
+                }
+                
             }.navigationTitle("settings")
         }
     }
