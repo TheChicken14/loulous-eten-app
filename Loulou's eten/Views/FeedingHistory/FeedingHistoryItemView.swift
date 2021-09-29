@@ -13,7 +13,7 @@ struct FeedingHistoryItemView: View {
     var body: some View {
         VStack(alignment:.leading) {
             if let date = feedingItem.whenDate {
-                Text("feedingHistory.dateAt \(date, style: .date) \(date, style: .time)")
+                Text("feedingHistory.dateAt \(date, style: .time)")
                     .font(.headline)
                     .padding(.bottom, 5)
                 

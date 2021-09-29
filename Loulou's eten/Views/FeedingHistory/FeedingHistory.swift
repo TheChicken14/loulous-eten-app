@@ -15,8 +15,14 @@ struct FeedingHistory: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(viewModel.feedingHistory, id: \.id) { item in
-                    FeedingHistoryItemView(feedingItem: item)
+                ForEach(viewModel.days, id: \.id) { day in
+                    Section() {
+                        ForEach(day.feedingItems, id: \.id) { item in
+                            FeedingHistoryItemView(feedingItem: item)
+                        }
+                    } header: {
+                        Text("\(day.day, style: .date)")
+                    }
                 }
                 
                 if viewModel.feedingHistory.count == 0 && !viewModel.loading {
