@@ -27,6 +27,8 @@
 		891D847B26D2D0DE008E88E2 /* ManagePetsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891D847A26D2D0DE008E88E2 /* ManagePetsViewModel.swift */; };
 		891D847D26D2D3A4008E88E2 /* ManagePetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891D847C26D2D3A4008E88E2 /* ManagePetAlert.swift */; };
 		89264BEF26CD549500DC1EA3 /* ButtonState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89264BEE26CD549500DC1EA3 /* ButtonState.swift */; };
+		89308E4627021EF100F65DD2 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89308E4527021EF100F65DD2 /* AboutView.swift */; };
+		89308E4927021FF300F65DD2 /* BetterSafariView in Frameworks */ = {isa = PBXBuildFile; productRef = 89308E4827021FF300F65DD2 /* BetterSafariView */; };
 		893273F726F3ADCA00D59C7A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 893273F626F3ADCA00D59C7A /* Alamofire */; };
 		893EE91A26DA832B002746F0 /* CreatePetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893EE91926DA832B002746F0 /* CreatePetView.swift */; };
 		894B970726D044CE00DD0CC9 /* Loulou2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 894B970426D044CE00DD0CC9 /* Loulou2@3x.png */; };
@@ -40,6 +42,7 @@
 		8965456326FDCE39000250AF /* QRCodeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8965456226FDCE39000250AF /* QRCodeAPI.swift */; };
 		8965456526FDD18C000250AF /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8965456426FDD18C000250AF /* QRCodeView.swift */; };
 		8965456826FDD4A2000250AF /* QRCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8965456726FDD4A2000250AF /* QRCodeViewModel.swift */; };
+		8976CBAD2702F01000AAA871 /* PetFeedingDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8976CBAC2702F01000AAA871 /* PetFeedingDay.swift */; };
 		897A432926D28E1000559819 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897A432826D28E1000559819 /* MainView.swift */; };
 		897A432B26D28E2600559819 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897A432A26D28E2600559819 /* MainViewModel.swift */; };
 		897A432D26D2952B00559819 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897A432C26D2952B00559819 /* Pet.swift */; };
@@ -123,6 +126,7 @@
 		891D847A26D2D0DE008E88E2 /* ManagePetsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePetsViewModel.swift; sourceTree = "<group>"; };
 		891D847C26D2D3A4008E88E2 /* ManagePetAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePetAlert.swift; sourceTree = "<group>"; };
 		89264BEE26CD549500DC1EA3 /* ButtonState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonState.swift; sourceTree = "<group>"; };
+		89308E4527021EF100F65DD2 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		893EE91926DA832B002746F0 /* CreatePetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePetView.swift; sourceTree = "<group>"; };
 		894B970426D044CE00DD0CC9 /* Loulou2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Loulou2@3x.png"; sourceTree = "<group>"; };
 		894B970526D044CE00DD0CC9 /* Loulou2@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Loulou2@1x.png"; sourceTree = "<group>"; };
@@ -135,6 +139,7 @@
 		8965456226FDCE39000250AF /* QRCodeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeAPI.swift; sourceTree = "<group>"; };
 		8965456426FDD18C000250AF /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
 		8965456726FDD4A2000250AF /* QRCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewModel.swift; sourceTree = "<group>"; };
+		8976CBAC2702F01000AAA871 /* PetFeedingDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetFeedingDay.swift; sourceTree = "<group>"; };
 		897A432826D28E1000559819 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		897A432A26D28E2600559819 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		897A432C26D2952B00559819 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
@@ -190,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				893273F726F3ADCA00D59C7A /* Alamofire in Frameworks */,
+				89308E4927021FF300F65DD2 /* BetterSafariView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +243,7 @@
 		891D847626D2D0A9008E88E2 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				89308E4427021EE100F65DD2 /* About */,
 				8914570426E3AE330086EC87 /* Pets */,
 				89B9D23B26D4F7A700546D1D /* Invite */,
 				89BC20CA26FCD6E1009130AD /* QRCodes */,
@@ -299,6 +306,14 @@
 				898ACBC526FB7A8400D8F6DF /* ImagePicker.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		89308E4427021EE100F65DD2 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				89308E4527021EF100F65DD2 /* AboutView.swift */,
+			);
+			path = About;
 			sourceTree = "<group>";
 		};
 		894B970326D0449F00DD0CC9 /* Icons */ = {
@@ -403,6 +418,7 @@
 				89C692AE26E277FC007C9C43 /* PetProfile.swift */,
 				8914570B26E3EE340086EC87 /* PetOwner.swift */,
 				897A433026D2958E00559819 /* FoodItem.swift */,
+				8976CBAC2702F01000AAA871 /* PetFeedingDay.swift */,
 			);
 			path = Pet;
 			sourceTree = "<group>";
@@ -510,6 +526,7 @@
 			name = "Loulou's eten";
 			packageProductDependencies = (
 				893273F626F3ADCA00D59C7A /* Alamofire */,
+				89308E4827021FF300F65DD2 /* BetterSafariView */,
 			);
 			productName = "Loulou's eten";
 			productReference = 89D3A08826C864960001837A /* Loulou's eten.app */;
@@ -541,6 +558,7 @@
 			mainGroup = 89D3A07F26C864950001837A;
 			packageReferences = (
 				893273F526F3ADCA00D59C7A /* XCRemoteSwiftPackageReference "Alamofire" */,
+				89308E4727021FF300F65DD2 /* XCRemoteSwiftPackageReference "BetterSafariView" */,
 			);
 			productRefGroup = 89D3A08926C864960001837A /* Products */;
 			projectDirPath = "";
@@ -620,6 +638,7 @@
 				8914570C26E3EE340086EC87 /* PetOwner.swift in Sources */,
 				89E9D10A26CAAFB10018CD68 /* Config.swift in Sources */,
 				89FD01C626C8656400D2C6D2 /* LoulousEten.swift in Sources */,
+				8976CBAD2702F01000AAA871 /* PetFeedingDay.swift in Sources */,
 				891D846C26D2A407008E88E2 /* AdaptiveStack.swift in Sources */,
 				890A4AC726D29F270092E8EE /* PetStatus.swift in Sources */,
 				897A432D26D2952B00559819 /* Pet.swift in Sources */,
@@ -639,6 +658,7 @@
 				89E9D11826CAF12C0018CD68 /* FeedingRequestParams.swift in Sources */,
 				89BC20D626FCE7CE009130AD /* QRCodeType.swift in Sources */,
 				89E9D12726CB1C1A0018CD68 /* GradientBackground.swift in Sources */,
+				89308E4627021EF100F65DD2 /* AboutView.swift in Sources */,
 				890A4AC526D29CDC0092E8EE /* HasFoodView.swift in Sources */,
 				891D846F26D2AC6C008E88E2 /* AddFirstPetView.swift in Sources */,
 				89C692AF26E277FC007C9C43 /* PetProfile.swift in Sources */,
@@ -870,6 +890,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		89308E4727021FF300F65DD2 /* XCRemoteSwiftPackageReference "BetterSafariView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stleamist/BetterSafariView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.0;
+			};
+		};
 		893273F526F3ADCA00D59C7A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -881,6 +909,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		89308E4827021FF300F65DD2 /* BetterSafariView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 89308E4727021FF300F65DD2 /* XCRemoteSwiftPackageReference "BetterSafariView" */;
+			productName = BetterSafariView;
+		};
 		893273F626F3ADCA00D59C7A /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 893273F526F3ADCA00D59C7A /* XCRemoteSwiftPackageReference "Alamofire" */;
