@@ -141,7 +141,7 @@
 
 // MARK: Feeding history sheet
 
-"feedingHistory.dateAt %@ %@" = "%1$@ om %2$@ uur";
+"feedingHistory.dateAt %@" = "Om %1$@ uur";
 
 "feedingHistory.by %@" = "Door %@";
 
@@ -170,3 +170,12 @@
 
 "qrcode" = "QR Code";
 "qrcode.share" = "Delen";
+
+// MARK: About this app
+
+"aboutThisApp" = "Over deze app";
+"about.privacyPolicy" = "Privacyverklaring";
+"about.website" = "Website";
+"about.contact" = "Contact";
+"about.loulousapp" = "Loulou's App";
+"about.subheader" = "Gemaakt met ❤️ in 🇳🇱";
