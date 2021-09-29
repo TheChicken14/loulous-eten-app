@@ -29,6 +29,7 @@ class FeedingHistoryViewModel: ObservableObject {
     }
     
     @Published var feedingHistory: [PetFeedingItem] = []
+    @Published var days: [PetFeedingDay] = []
     
     func reloadButtonPress() {
         loading = true
@@ -64,6 +65,7 @@ class FeedingHistoryViewModel: ObservableObject {
     }
     
     func loadFoodHistory(pet: Pet) {
+        self.days = []
         API.request(
             "\(Config.API_URL)/food/history/\(selectedPet?.id ?? 0)"
         )
@@ -73,6 +75,33 @@ class FeedingHistoryViewModel: ObservableObject {
                     self.feedingHistory = feedingHistory
                     self.loading = false
                     self.error = false
+                    
+                    for feedingHistoryItem in feedingHistory {
+                        guard let date = feedingHistoryItem.whenDate else { return }
+                        
+                        let dayItemIndex = self.days.firstIndex { day in
+                            let dateComponents = Calendar.current.dateComponents([.day, .month, .year], from: date)
+                            let dayComponents = Calendar.current.dateComponents([.day, .month, .year], from: day.day)
+                            
+                            if dateComponents.day == dayComponents.day &&
+                                dateComponents.month == dayComponents.month &&
+                                dateComponents.year == dayComponents.year {
+                                return true
+                            } else {
+                                return false
+                            }
+                        }
+                        guard let index = dayItemIndex else {
+                            self.days.append(PetFeedingDay(day: date, feedingItems: [feedingHistoryItem]))
+                            continue;
+                        }
+                        
+                        if self.days.indices.contains(index) {
+                            self.days[index].feedingItems.append(feedingHistoryItem)
+                        } else {
+                            self.days.append(PetFeedingDay(day: date, feedingItems: [feedingHistoryItem]))
+                        }
+                    }
                     
                 case .failure(_):
                     self.error = true
