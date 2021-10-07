@@ -80,6 +80,8 @@ class HomeViewModel: ObservableObject {
                     self.selectedPet = self.pets.first
                 }
                 
+                UserDefaults.standard.set(userInfo.id, forKey: "userid")
+                
                 if userInfo.pets.count == 0 {
                     if shouldWelcome {
                         self.showSheet(sheet: .welcomeSheet)
