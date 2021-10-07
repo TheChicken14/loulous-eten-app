@@ -8,6 +8,8 @@
 import Foundation
 import AuthenticationServices
 import Combine
+import Firebase
+import FirebaseMessaging
 
 class LoginViewModel: ObservableObject {
     @Published var loading: Bool = false
@@ -42,6 +44,11 @@ class LoginViewModel: ObservableObject {
                 switch response.result {
                 case .success(let tokenRes):
                     UserDefaults.standard.set(tokenRes.jwt, forKey: "token")
+                    Messaging.messaging().token { token, _ in
+                        if let token = token {
+                            APIMethods.registerDevice(token)
+                        }
+                    }
                     self.loggedinPublisher.send(true)
                 case .failure(let error):
                     print(error)
