@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import UIKit
 
 final class RequestInterceptor: Alamofire.RequestInterceptor {
 
@@ -37,3 +38,15 @@ let API: Session = {
     
   return Session(configuration: configuration, interceptor: RequestInterceptor())
 }()
+
+struct APIMethods {
+    static func registerDevice(_ fcmtoken: String) {
+        let params: Parameters = [
+            "name": UIDevice.current.name,
+            "uuid": UIDevice.current.identifierForVendor?.uuidString ?? "",
+            "fcmtoken": fcmtoken
+        ]
+        
+        API.request("\(Config.API_URL)/device/register", method: .post, parameters: params).response { _ in }
+    }
+}
