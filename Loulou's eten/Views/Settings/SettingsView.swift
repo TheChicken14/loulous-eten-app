@@ -19,6 +19,13 @@ struct SettingsView: View {
                 }
                 
                 NavigationLink {
+                    ManageNotificationsView()
+                } label: {
+                    Label("notifications", systemImage: "bell.circle")
+                        .font(Font.body.bold())
+                }
+                
+                NavigationLink {
                     ManageInvites()
                 } label: {
                     Label("settings.invites", systemImage: "person.crop.circle.fill.badge.plus")
@@ -38,7 +45,6 @@ struct SettingsView: View {
                     Label("aboutThisApp", systemImage: "info.circle")
                         .font(Font.body.bold())
                 }
-                
             }.navigationTitle("settings")
         }
     }
