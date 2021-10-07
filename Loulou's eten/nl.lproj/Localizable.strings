@@ -179,3 +179,15 @@
 "about.contact" = "Contact";
 "about.loulousapp" = "Loulou's App";
 "about.subheader" = "Gemaakt met ❤️ in 🇳🇱";
+
+// MARK: Notifications
+
+// MARK: - Manage notifications screen
+"notifications" = "Meldingen";
+
+"notification.on.fed %@" = "Melding wanneer %@ eten heeft gekregen";
+
+// MARK: - Pet got fed
+
+"note.fed.title" = "%@ heeft eten!";
+"note.fed.body" = "%@ heeft net eten gekregen van %@";
