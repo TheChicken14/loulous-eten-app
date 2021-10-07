@@ -9,9 +9,15 @@
 /* Begin PBXBuildFile section */
 		8905427826D59B270025CB12 /* SIWAParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8905427726D59B270025CB12 /* SIWAParams.swift */; };
 		8905427B26D59E0E0025CB12 /* SIWAResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8905427A26D59E0E0025CB12 /* SIWAResponse.swift */; };
+		8906BAB9270CAA0400B114ED /* ManageNotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8906BAB8270CAA0400B114ED /* ManageNotificationsView.swift */; };
+		8906BABC270CAA2B00B114ED /* ManageNotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8906BABB270CAA2B00B114ED /* ManageNotificationsViewModel.swift */; };
 		890A4AC526D29CDC0092E8EE /* HasFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890A4AC426D29CDC0092E8EE /* HasFoodView.swift */; };
 		890A4AC726D29F270092E8EE /* PetStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890A4AC626D29F260092E8EE /* PetStatus.swift */; };
 		890BB76926D65D9B00309118 /* CreateInviteSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890BB76826D65D9A00309118 /* CreateInviteSheet.swift */; };
+		890CCAA2270C898F00AB22EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 890CCAA1270C898E00AB22EF /* GoogleService-Info.plist */; };
+		890CCAA5270C8A5F00AB22EF /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 890CCAA4270C8A5F00AB22EF /* FirebaseAnalytics */; };
+		890CCAA7270C8A5F00AB22EF /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 890CCAA6270C8A5F00AB22EF /* FirebaseMessaging */; };
+		890CCAAA270C8B3500AB22EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890CCAA9270C8B3500AB22EF /* AppDelegate.swift */; };
 		89104FA926D6C0150087CDE7 /* AcceptInviteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89104FA826D6C0150087CDE7 /* AcceptInviteView.swift */; };
 		89104FAB26D6C9170087CDE7 /* HowToAcceptInvite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89104FAA26D6C9170087CDE7 /* HowToAcceptInvite.swift */; };
 		8914570826E3B0260086EC87 /* PetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8914570726E3B0260086EC87 /* PetView.swift */; };
@@ -42,6 +48,7 @@
 		8965456326FDCE39000250AF /* QRCodeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8965456226FDCE39000250AF /* QRCodeAPI.swift */; };
 		8965456526FDD18C000250AF /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8965456426FDD18C000250AF /* QRCodeView.swift */; };
 		8965456826FDD4A2000250AF /* QRCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8965456726FDD4A2000250AF /* QRCodeViewModel.swift */; };
+		896B2FB4270DAA7800101541 /* NotificationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896B2FB3270DAA7800101541 /* NotificationsResponse.swift */; };
 		8976CBAD2702F01000AAA871 /* PetFeedingDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8976CBAC2702F01000AAA871 /* PetFeedingDay.swift */; };
 		897A432926D28E1000559819 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897A432826D28E1000559819 /* MainView.swift */; };
 		897A432B26D28E2600559819 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897A432A26D28E2600559819 /* MainViewModel.swift */; };
@@ -85,6 +92,7 @@
 		89E9D12126CB10FB0018CD68 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E9D12026CB10FB0018CD68 /* API.swift */; };
 		89E9D12326CB16EB0018CD68 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E9D12226CB16EB0018CD68 /* SettingsView.swift */; };
 		89E9D12726CB1C1A0018CD68 /* GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E9D12626CB1C1A0018CD68 /* GradientBackground.swift */; };
+		89FC9BD0270DDD5100A53054 /* NotificationItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC9BCF270DDD5100A53054 /* NotificationItemView.swift */; };
 		89FD01C626C8656400D2C6D2 /* LoulousEten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FD01C526C8656400D2C6D2 /* LoulousEten.swift */; };
 		89FD01C826C865C400D2C6D2 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FD01C726C865C400D2C6D2 /* HomeViewModel.swift */; };
 		89FD01CB26C86C9900D2C6D2 /* HasFoodResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FD01CA26C86C9900D2C6D2 /* HasFoodResponse.swift */; };
@@ -107,9 +115,13 @@
 		8905427726D59B270025CB12 /* SIWAParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIWAParams.swift; sourceTree = "<group>"; };
 		8905427A26D59E0E0025CB12 /* SIWAResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIWAResponse.swift; sourceTree = "<group>"; };
 		8905EB1226CE7B30004365A2 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		8906BAB8270CAA0400B114ED /* ManageNotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageNotificationsView.swift; sourceTree = "<group>"; };
+		8906BABB270CAA2B00B114ED /* ManageNotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageNotificationsViewModel.swift; sourceTree = "<group>"; };
 		890A4AC426D29CDC0092E8EE /* HasFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasFoodView.swift; sourceTree = "<group>"; };
 		890A4AC626D29F260092E8EE /* PetStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetStatus.swift; sourceTree = "<group>"; };
 		890BB76826D65D9A00309118 /* CreateInviteSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateInviteSheet.swift; sourceTree = "<group>"; };
+		890CCAA1270C898E00AB22EF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		890CCAA9270C8B3500AB22EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89104FA826D6C0150087CDE7 /* AcceptInviteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptInviteView.swift; sourceTree = "<group>"; };
 		89104FAA26D6C9170087CDE7 /* HowToAcceptInvite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToAcceptInvite.swift; sourceTree = "<group>"; };
 		8914570726E3B0260086EC87 /* PetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetView.swift; sourceTree = "<group>"; };
@@ -139,6 +151,7 @@
 		8965456226FDCE39000250AF /* QRCodeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeAPI.swift; sourceTree = "<group>"; };
 		8965456426FDD18C000250AF /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
 		8965456726FDD4A2000250AF /* QRCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewModel.swift; sourceTree = "<group>"; };
+		896B2FB3270DAA7800101541 /* NotificationsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsResponse.swift; sourceTree = "<group>"; };
 		8976CBAC2702F01000AAA871 /* PetFeedingDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetFeedingDay.swift; sourceTree = "<group>"; };
 		897A432826D28E1000559819 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		897A432A26D28E2600559819 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
@@ -184,6 +197,7 @@
 		89E9D12026CB10FB0018CD68 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		89E9D12226CB16EB0018CD68 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		89E9D12626CB1C1A0018CD68 /* GradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackground.swift; sourceTree = "<group>"; };
+		89FC9BCF270DDD5100A53054 /* NotificationItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationItemView.swift; sourceTree = "<group>"; };
 		89FD01C526C8656400D2C6D2 /* LoulousEten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoulousEten.swift; sourceTree = "<group>"; };
 		89FD01C726C865C400D2C6D2 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		89FD01CA26C86C9900D2C6D2 /* HasFoodResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasFoodResponse.swift; sourceTree = "<group>"; };
@@ -194,8 +208,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				890CCAA7270C8A5F00AB22EF /* FirebaseMessaging in Frameworks */,
 				893273F726F3ADCA00D59C7A /* Alamofire in Frameworks */,
 				89308E4927021FF300F65DD2 /* BetterSafariView in Frameworks */,
+				890CCAA5270C8A5F00AB22EF /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +233,31 @@
 				8905EB1226CE7B30004365A2 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8906BABA270CAA2300B114ED /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				8906BABB270CAA2B00B114ED /* ManageNotificationsViewModel.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		890CCAA8270C8A6F00AB22EF /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				890CCAA9270C8B3500AB22EF /* AppDelegate.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		890CCAAD270CA9BE00AB22EF /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				8906BAB8270CAA0400B114ED /* ManageNotificationsView.swift */,
+				89FC9BCF270DDD5100A53054 /* NotificationItemView.swift */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 		8914570426E3AE330086EC87 /* Pets */ = {
@@ -247,6 +288,7 @@
 				8914570426E3AE330086EC87 /* Pets */,
 				89B9D23B26D4F7A700546D1D /* Invite */,
 				89BC20CA26FCD6E1009130AD /* QRCodes */,
+				890CCAAD270CA9BE00AB22EF /* Notifications */,
 				89E9D12226CB16EB0018CD68 /* SettingsView.swift */,
 			);
 			path = Settings;
@@ -255,6 +297,7 @@
 		891D847926D2D0D1008E88E2 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				8906BABA270CAA2300B114ED /* Notifications */,
 				89BC20CF26FCE76B009130AD /* QRCode */,
 				89BC20CE26FCE763009130AD /* Pets */,
 				89B9D23E26D4F89B00546D1D /* Invite */,
@@ -283,6 +326,7 @@
 				897A432E26D2955F00559819 /* UserInfo.swift */,
 				891D847426D2AEB0008E88E2 /* CreatePetParams.swift */,
 				89B9D24126D4F8C300546D1D /* InviteItem.swift */,
+				896B2FB3270DAA7800101541 /* NotificationsResponse.swift */,
 			);
 			path = Structs;
 			sourceTree = "<group>";
@@ -446,6 +490,7 @@
 				891AEB4F26D5833F00EEAA05 /* Loulou's eten.entitlements */,
 				894B970326D0449F00DD0CC9 /* Icons */,
 				89B4D1FD26CB1DAD00B43A71 /* Loulous-eten-Info.plist */,
+				890CCAA8270C8A6F00AB22EF /* Shared */,
 				89FD01C926C86C8200D2C6D2 /* Models */,
 				89D3A09A26C864BC0001837A /* ViewModels */,
 				89D3A09926C864B50001837A /* Views */,
@@ -455,6 +500,7 @@
 				89AEF1AD26CC622500983E68 /* Launch Screen.storyboard */,
 				89D3A08F26C864980001837A /* Assets.xcassets */,
 				89AEF1AA26CC597100983E68 /* Localizable.strings */,
+				890CCAA1270C898E00AB22EF /* GoogleService-Info.plist */,
 				89D3A09126C864980001837A /* Preview Content */,
 			);
 			path = "Loulou's eten";
@@ -474,11 +520,11 @@
 				89264BF326CDA79500DC1EA3 /* Components */,
 				891D846D26D2AC4F008E88E2 /* Welcome */,
 				891D847626D2D0A9008E88E2 /* Settings */,
+				89264BF226CDA78200DC1EA3 /* FeedingHistory */,
 				897A432826D28E1000559819 /* MainView.swift */,
 				89CDAEA226D1AB9F00A4F612 /* LoginScreen.swift */,
 				89D3A09B26C864C90001837A /* Home.swift */,
 				89608E0D26CBB927004993F7 /* FeedingSheet.swift */,
-				89264BF226CDA78200DC1EA3 /* FeedingHistory */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -527,6 +573,8 @@
 			packageProductDependencies = (
 				893273F626F3ADCA00D59C7A /* Alamofire */,
 				89308E4827021FF300F65DD2 /* BetterSafariView */,
+				890CCAA4270C8A5F00AB22EF /* FirebaseAnalytics */,
+				890CCAA6270C8A5F00AB22EF /* FirebaseMessaging */,
 			);
 			productName = "Loulou's eten";
 			productReference = 89D3A08826C864960001837A /* Loulou's eten.app */;
@@ -559,6 +607,7 @@
 			packageReferences = (
 				893273F526F3ADCA00D59C7A /* XCRemoteSwiftPackageReference "Alamofire" */,
 				89308E4727021FF300F65DD2 /* XCRemoteSwiftPackageReference "BetterSafariView" */,
+				890CCAA3270C8A5F00AB22EF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 89D3A08926C864960001837A /* Products */;
 			projectDirPath = "";
@@ -577,6 +626,7 @@
 				894B970926D044CF00DD0CC9 /* Loulou2@2x.png in Resources */,
 				89D3A09326C864980001837A /* Preview Assets.xcassets in Resources */,
 				89AEF1A826CC597100983E68 /* Localizable.strings in Resources */,
+				890CCAA2270C898F00AB22EF /* GoogleService-Info.plist in Resources */,
 				894B970726D044CE00DD0CC9 /* Loulou2@3x.png in Resources */,
 				894B970826D044CF00DD0CC9 /* Loulou2@1x.png in Resources */,
 				89AEF1AE26CC622500983E68 /* Launch Screen.storyboard in Resources */,
@@ -591,9 +641,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89FC9BD0270DDD5100A53054 /* NotificationItemView.swift in Sources */,
 				89E9D11626CAC5390018CD68 /* FeedingHistoryItemView.swift in Sources */,
 				897A432926D28E1000559819 /* MainView.swift in Sources */,
 				89B9D24026D4F8A900546D1D /* ManageInvitesViewModel.swift in Sources */,
+				896B2FB4270DAA7800101541 /* NotificationsResponse.swift in Sources */,
 				8905427826D59B270025CB12 /* SIWAParams.swift in Sources */,
 				89DC37AD26D01B7200FC4E4E /* RemoveItemParams.swift in Sources */,
 				89BC20D426FCE79C009130AD /* QRCode.swift in Sources */,
@@ -621,10 +673,12 @@
 				8960A9F626FA363300369EEB /* ExtraNotesSheet.swift in Sources */,
 				89608E1026CBBC2D004993F7 /* FeedingViewModel.swift in Sources */,
 				8905427B26D59E0E0025CB12 /* SIWAResponse.swift in Sources */,
+				8906BAB9270CAA0400B114ED /* ManageNotificationsView.swift in Sources */,
 				8914570A26E3ED3B0086EC87 /* PetViewModel.swift in Sources */,
 				89E9D12326CB16EB0018CD68 /* SettingsView.swift in Sources */,
 				89D3A09C26C864C90001837A /* Home.swift in Sources */,
 				89E9D11226CAC0AC0018CD68 /* FeedingHistoryViewModel.swift in Sources */,
+				890CCAAA270C8B3500AB22EF /* AppDelegate.swift in Sources */,
 				89B9D23D26D4F7B800546D1D /* ManageInvites.swift in Sources */,
 				89E9D11426CAC0CF0018CD68 /* HistoryResponse.swift in Sources */,
 				894CCAE926DABA2D0029A5DB /* CreatePetViewModel.swift in Sources */,
@@ -647,6 +701,7 @@
 				8965456526FDD18C000250AF /* QRCodeView.swift in Sources */,
 				898ACBC626FB7A8500D8F6DF /* ImagePicker.swift in Sources */,
 				89FD01CB26C86C9900D2C6D2 /* HasFoodResponse.swift in Sources */,
+				8906BABC270CAA2B00B114ED /* ManageNotificationsViewModel.swift in Sources */,
 				89BC20DA26FCE9B3009130AD /* CreateQRCodeViewModel.swift in Sources */,
 				89BC20D126FCE77A009130AD /* ManageQRCodesViewModel.swift in Sources */,
 				89B9D24426D4FD3B00546D1D /* InviteItemView.swift in Sources */,
@@ -890,6 +945,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		890CCAA3270C8A5F00AB22EF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		89308E4727021FF300F65DD2 /* XCRemoteSwiftPackageReference "BetterSafariView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/stleamist/BetterSafariView.git";
@@ -909,6 +972,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		890CCAA4270C8A5F00AB22EF /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 890CCAA3270C8A5F00AB22EF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		890CCAA6270C8A5F00AB22EF /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 890CCAA3270C8A5F00AB22EF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
 		89308E4827021FF300F65DD2 /* BetterSafariView */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 89308E4727021FF300F65DD2 /* XCRemoteSwiftPackageReference "BetterSafariView" */;
