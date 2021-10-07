@@ -21,7 +21,9 @@ struct FeedingHistory: View {
                             FeedingHistoryItemView(feedingItem: item)
                         }
                     } header: {
-                        Text("\(day.day, style: .date)")
+                        if let date = day.date {
+                            Text("\(date, style: .date)")
+                        }
                     }
                 }
                 
@@ -37,30 +39,40 @@ struct FeedingHistory: View {
                 .onAppear(perform: viewModel.load)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
-                        Menu {
-                            Picker("home.pet", selection: $viewModel.selectedPetIndex) {
-                                ForEach(0..<viewModel.pets.count, id: \.self) { index in
-                                    Text(viewModel.pets[index].name)
-                                        .tag(index)
-                                }
-                            }
-                        } label: {
-                            Text(viewModel.selectedPet?.name ?? "home.pet")
-                                .animation(.none)
-                        }
+                        toolbarPicker
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        if viewModel.loading {
-                            ProgressView()
-                        } else {
-                            Button {
-                                viewModel.reloadButtonPress()
-                            } label: {
-                                Label("home.reload", systemImage: "arrow.clockwise")
-                            }.disabled(viewModel.reloadButtonDisabled)
-                        }
+                        toolbarReload
                     }
                 }
+        }
+    }
+    
+    var toolbarPicker: some View {
+        Group {
+            if viewModel.loading {
+                ProgressView()
+            } else {
+                Button {
+                    viewModel.reloadButtonPress()
+                } label: {
+                    Label("home.reload", systemImage: "arrow.clockwise")
+                }.disabled(viewModel.reloadButtonDisabled)
+            }
+        }
+    }
+    
+    var toolbarReload: some View {
+        Menu {
+            Picker("home.pet", selection: $viewModel.selectedPetIndex) {
+                ForEach(0..<viewModel.pets.count, id: \.self) { index in
+                    Text(viewModel.pets[index].name)
+                        .tag(index)
+                }
+            }
+        } label: {
+            Text(viewModel.selectedPet?.name ?? "home.pet")
+                .animation(.none)
         }
     }
 }

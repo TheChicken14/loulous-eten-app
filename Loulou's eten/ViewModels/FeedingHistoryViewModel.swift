@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import SwiftUI
 
 class FeedingHistoryViewModel: ObservableObject {
     @Published var loading: Bool = true
@@ -72,41 +73,41 @@ class FeedingHistoryViewModel: ObservableObject {
             .responseDecodable(of: [PetFeedingItem].self) { response in
                 switch response.result {
                 case .success(let feedingHistory):
-                    self.feedingHistory = feedingHistory
-                    self.loading = false
-                    self.error = false
-                    
-                    for feedingHistoryItem in feedingHistory {
-                        guard let date = feedingHistoryItem.whenDate else { return }
-                        
-                        let dayItemIndex = self.days.firstIndex { day in
-                            let dateComponents = Calendar.current.dateComponents([.day, .month, .year], from: date)
-                            let dayComponents = Calendar.current.dateComponents([.day, .month, .year], from: day.day)
-                            
-                            if dateComponents.day == dayComponents.day &&
-                                dateComponents.month == dayComponents.month &&
-                                dateComponents.year == dayComponents.year {
-                                return true
-                            } else {
-                                return false
-                            }
-                        }
-                        guard let index = dayItemIndex else {
-                            self.days.append(PetFeedingDay(day: date, feedingItems: [feedingHistoryItem]))
-                            continue;
-                        }
-                        
-                        if self.days.indices.contains(index) {
-                            self.days[index].feedingItems.append(feedingHistoryItem)
-                        } else {
-                            self.days.append(PetFeedingDay(day: date, feedingItems: [feedingHistoryItem]))
-                        }
+                    withAnimation {
+                        self.feedingHistory = feedingHistory
+                        self.loading = false
+                        self.error = false
+                        self.days = self.sortItems(feedingHistory)
                     }
-                    
                 case .failure(_):
                     self.error = true
                 }
             }
+    }
+    
+    func sortItems(_ feedingHistory: [PetFeedingItem]) -> [PetFeedingDay] {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        
+        var feedingDays: [PetFeedingDay] = []
+        
+        for feedingHistoryItem in feedingHistory {
+            guard let date = feedingHistoryItem.whenDate else { continue }
+            let dayString = dateFormatter.string(from: date)
+
+            let dayItemIndex = feedingDays.firstIndex { day in
+                return day.day == dayString
+            }
+            
+            if let index = dayItemIndex, feedingDays.indices.contains(index) {
+                feedingDays[index].feedingItems.append(feedingHistoryItem)
+            } else {
+                feedingDays.append(PetFeedingDay(day: dayString, feedingItems: [feedingHistoryItem]))
+            }
+        }
+        
+        return feedingDays
     }
     
     func removeItem(item: HistoryItem) {
