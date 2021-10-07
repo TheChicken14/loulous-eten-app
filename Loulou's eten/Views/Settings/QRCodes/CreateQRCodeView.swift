@@ -20,7 +20,7 @@ struct CreateQRCodeView: View {
             HStack {
                 Picker("home.pet", selection: $viewModel.selectedPetIndex) {
                     ForEach(0..<viewModel.pets.count, id: \.self) { i in
-                        Text(viewModel.pets[i].name)
+                        Text(viewModel.pets[i].name).tag(i)
                     }
                 }//.pickerStyle(.menu)
             }

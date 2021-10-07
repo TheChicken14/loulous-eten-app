@@ -13,8 +13,9 @@ final class CreateQRCodeViewModel: ObservableObject {
     @Published var savingState: ButtonState = .normal
     
     @Published var pets: [Pet] = []
-    @Published var selectedPetIndex: Int = 0 {
+    @Published var selectedPetIndex = 0 {
         didSet {
+            print(pets[selectedPetIndex].name)
             self.selectedPet = pets[selectedPetIndex]
         }
     }
@@ -37,10 +38,11 @@ final class CreateQRCodeViewModel: ObservableObject {
     }
     
     func createQRCode() {
-        guard let selectedPet = selectedPet else {
-            return
-        }
-
+//        guard let selectedPet = pets[selectedPetIndex] else {
+//            return
+//        }
+        let selectedPet = pets[selectedPetIndex]
+        
         let qr = QRCode(petId: selectedPet.id, pet: selectedPet, type: .feeding, id: nil)
         
         self.savingState = .loading
