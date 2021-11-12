@@ -46,7 +46,7 @@ struct SettingsView: View {
                         .font(Font.body.bold())
                 }
             }.navigationTitle("settings")
-        }
+        }.navigationViewStyle(.columns)
     }
 }
 
