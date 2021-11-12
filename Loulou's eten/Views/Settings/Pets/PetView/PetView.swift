@@ -120,7 +120,9 @@ struct PetView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    viewModel.editing = !viewModel.editing
+                    withAnimation {
+                        viewModel.editing = !viewModel.editing
+                    }
                 } label: {
                     Label("edit", systemImage: "pencil")
                 }
